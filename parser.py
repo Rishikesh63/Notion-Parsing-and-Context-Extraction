@@ -6,26 +6,57 @@ from notion_client import Client
 from notion_client.errors import APIResponseError
 from langchain.schema import Document as LangchainDocument
 from langchain.text_splitter import RecursiveCharacterTextSplitter
-import base64
-import PyPDF2
+import requests
 import io
+import csv
+import json
+from notion_client import Client
+from notion_client.errors import APIResponseError
+import PyPDF2
 from PIL import Image
 import pytesseract
-import csv
-import time
-from urllib.parse import urlparse
 import logging
-
-# Set up logging
-logging.basicConfig(level=logging.INFO)
-logger = logging.getLogger(__name__)
+from typing import Dict, List, Any, Optional
 
 class NotionParser:
+    """
+    NotionParser parses Notion documents and databases, supporting multiple block types and extensible via the Strategy pattern.
+    """
     def __init__(self, token: str, ocr_enabled: bool = True, max_retries: int = 3):
         self.client = Client(auth=token)
+        self.token = token
+        self.ocr_enabled = ocr_enabled
+        self.max_retries = max_retries
         self.parsed_blocks_count = 0
         self.failed_blocks_count = 0
         self.embedded_files_count = 0
+        # Strategy registry for block parsing
+        self.block_parsers = {
+            "paragraph": self._parse_paragraph,
+            "heading_1": self._parse_heading,
+            "heading_2": self._parse_heading,
+            "heading_3": self._parse_heading,
+            "bulleted_list_item": self._parse_list_item,
+            "numbered_list_item": self._parse_list_item,
+            "to_do": self._parse_to_do,
+            "toggle": self._parse_toggle,
+            "code": self._parse_code,
+            "quote": self._parse_quote,
+            "callout": self._parse_callout,
+            "table": self._parse_table,
+            "table_row": self._parse_table_row,
+            "image": self._parse_image,
+            "file": self._parse_file,
+            "pdf": self._parse_pdf,
+            "video": self._parse_video,
+            "bookmark": self._parse_bookmark,
+            "embed": self._parse_embed,
+            "equation": self._parse_equation,
+            "divider": self._parse_divider,
+            "table_of_contents": self._parse_table_of_contents,
+            "child_page": self._parse_child_page,
+            "child_database": self._parse_child_database,
+        }
         self.ocr_enabled = ocr_enabled
         self.max_retries = max_retries
         
@@ -144,117 +175,371 @@ class NotionParser:
         return []
     
     def _parse_block(self, block: Dict[str, Any], depth: int = 0) -> Optional[Dict[str, Any]]:
-        """Parse an individual block based on its type"""
+        """Parse an individual block using the strategy pattern"""
         block_type = block.get("type")
         block_id = block.get("id")
-        
+        parser_func = self.block_parsers.get(block_type, self._parse_unsupported)
+        parsed_block = parser_func(block, depth)
+        self.parsed_blocks_count += 1
+        return parsed_block
+    # Strategy implementations for each block type
+    def _parse_paragraph(self, block, depth):
+        return {
+            "id": block.get("id"),
+            "type": "paragraph",
+            "depth": depth,
+            "content": self._extract_rich_text(block["paragraph"].get("rich_text", [])),
+            "metadata": {}
+        }
+
+    def _parse_heading(self, block, depth):
+        block_type = block.get("type")
+        return {
+            "id": block.get("id"),
+            "type": block_type,
+            "depth": depth,
+            "content": self._extract_rich_text(block[block_type].get("rich_text", [])),
+            "metadata": {"level": int(block_type.split("_")[1])}
+        }
+
+    def _parse_list_item(self, block, depth):
+        block_type = block.get("type")
+        return {
+            "id": block.get("id"),
+            "type": block_type,
+            "depth": depth,
+            "content": self._extract_rich_text(block[block_type].get("rich_text", [])),
+            "metadata": {}
+        }
+
+    def _parse_to_do(self, block, depth):
+        return {
+            "id": block.get("id"),
+            "type": "to_do",
+            "depth": depth,
+            "content": self._extract_rich_text(block["to_do"].get("rich_text", [])),
+            "metadata": {"checked": block["to_do"].get("checked", False)}
+        }
+
+    def _parse_toggle(self, block, depth):
+        return {
+            "id": block.get("id"),
+            "type": "toggle",
+            "depth": depth,
+            "content": self._extract_rich_text(block["toggle"].get("rich_text", [])),
+            "metadata": {}
+        }
+
+    def _parse_code(self, block, depth):
+        return {
+            "id": block.get("id"),
+            "type": "code",
+            "depth": depth,
+            "content": self._extract_rich_text(block["code"].get("rich_text", [])),
+            "metadata": {"language": block["code"].get("language", "")}
+        }
+
+    def _parse_quote(self, block, depth):
+        return {
+            "id": block.get("id"),
+            "type": "quote",
+            "depth": depth,
+            "content": self._extract_rich_text(block["quote"].get("rich_text", [])),
+            "metadata": {}
+        }
+
+    def _parse_callout(self, block, depth):
+        meta = {}
+        if "icon" in block["callout"]:
+            meta["icon"] = block["callout"]["icon"]
+        return {
+            "id": block.get("id"),
+            "type": "callout",
+            "depth": depth,
+            "content": self._extract_rich_text(block["callout"].get("rich_text", [])),
+            "metadata": meta
+        }
+
+    def _parse_table(self, block, depth):
+        # ...existing code...
+        return {"id": block.get("id"), "type": "table", "depth": depth, "content": None, "metadata": {}}
+
+    def _parse_table_row(self, block, depth):
+        # ...existing code...
+        return {"id": block.get("id"), "type": "table_row", "depth": depth, "content": None, "metadata": {}}
+
+    def _parse_image(self, block, depth):
+        # ...existing code...
+        return {"id": block.get("id"), "type": "image", "depth": depth, "content": None, "metadata": {}}
+
+    def _parse_file(self, block, depth):
+        # ...existing code...
+        return {"id": block.get("id"), "type": "file", "depth": depth, "content": None, "metadata": {}}
+
+    def _parse_pdf(self, block, depth):
+        # ...existing code...
+        return {"id": block.get("id"), "type": "pdf", "depth": depth, "content": None, "metadata": {}}
+
+    def _parse_video(self, block, depth):
+        # ...existing code...
+        return {"id": block.get("id"), "type": "video", "depth": depth, "content": None, "metadata": {}}
+
+    def _parse_bookmark(self, block, depth):
+        # ...existing code...
+        return {"id": block.get("id"), "type": "bookmark", "depth": depth, "content": None, "metadata": {}}
+
+    def _parse_embed(self, block, depth):
+        # ...existing code...
+        return {"id": block.get("id"), "type": "embed", "depth": depth, "content": None, "metadata": {}}
+
+    def _parse_equation(self, block, depth):
+        return {
+            "id": block.get("id"),
+            "type": "equation",
+            "depth": depth,
+            "content": block["equation"].get("expression", ""),
+            "metadata": {}
+        }
+
+    def _parse_divider(self, block, depth):
+        return {
+            "id": block.get("id"),
+            "type": "divider",
+            "depth": depth,
+            "content": "---",
+            "metadata": {}
+        }
+
+    def _parse_table_of_contents(self, block, depth):
+        return {
+            "id": block.get("id"),
+            "type": "table_of_contents",
+            "depth": depth,
+            "content": "Table of Contents",
+            "metadata": {}
+        }
+
+    def _parse_child_page(self, block, depth):
+        parsed_block = {
+            "id": block.get("id"),
+            "type": "child_page",
+            "depth": depth,
+            "content": block["child_page"].get("title", ""),
+            "metadata": {}
+        }
         try:
-            parsed_block = {
-                "id": block_id,
-                "type": block_type,
-                "depth": depth,
-                "content": None,
-                "metadata": {}
-            }
-            
-            # Handle different block types
-            if block_type == "paragraph":
-                parsed_block["content"] = self._extract_rich_text(block[block_type].get("rich_text", []))
-            
-            elif block_type in ["heading_1", "heading_2", "heading_3"]:
-                parsed_block["content"] = self._extract_rich_text(block[block_type].get("rich_text", []))
-                parsed_block["metadata"]["level"] = int(block_type.split("_")[1])
-            
-            elif block_type == "bulleted_list_item":
-                parsed_block["content"] = self._extract_rich_text(block[block_type].get("rich_text", []))
-            
-            elif block_type == "numbered_list_item":
-                parsed_block["content"] = self._extract_rich_text(block[block_type].get("rich_text", []))
-            
-            elif block_type == "to_do":
-                parsed_block["content"] = self._extract_rich_text(block[block_type].get("rich_text", []))
-                parsed_block["metadata"]["checked"] = block[block_type].get("checked", False)
-            
-            elif block_type == "toggle":
-                parsed_block["content"] = self._extract_rich_text(block[block_type].get("rich_text", []))
-            
-            elif block_type == "code":
-                parsed_block["content"] = self._extract_rich_text(block[block_type].get("rich_text", []))
-                parsed_block["metadata"]["language"] = block[block_type].get("language", "")
-            
-            elif block_type == "quote":
-                parsed_block["content"] = self._extract_rich_text(block[block_type].get("rich_text", []))
-            
-            elif block_type == "callout":
-                parsed_block["content"] = self._extract_rich_text(block[block_type].get("rich_text", []))
-                # Extract callout icon if available
-                if "icon" in block[block_type]:
-                    parsed_block["metadata"]["icon"] = block[block_type]["icon"]
-            
-            elif block_type == "table":
-                parsed_block = self._parse_table(block, depth)
-            
-            elif block_type == "table_row":
-                parsed_block = self._parse_table_row(block, depth)
-            
-            elif block_type == "image":
-                parsed_block = self._parse_image(block, depth)
-            
-            elif block_type == "file":
-                parsed_block = self._parse_file(block, depth)
-            
-            elif block_type == "pdf":
-                parsed_block = self._parse_pdf(block, depth)
-            
-            elif block_type == "video":
-                parsed_block = self._parse_video(block, depth)
-            
-            elif block_type == "bookmark":
-                parsed_block = self._parse_bookmark(block, depth)
-            
-            elif block_type == "embed":
-                parsed_block = self._parse_embed(block, depth)
-            
-            elif block_type == "equation":
-                parsed_block["content"] = block[block_type].get("expression", "")
-            
-            elif block_type == "divider":
-                parsed_block["content"] = "---"
-            
-            elif block_type == "table_of_contents":
-                parsed_block["content"] = "Table of Contents"
-            
-            elif block_type == "child_page":
-                parsed_block["content"] = block[block_type].get("title", "")
-                # Recursively parse child page content
-                try:
-                    child_blocks = self._parse_blocks_recursively(block_id, depth + 1)
-                    if child_blocks:
-                        parsed_block["children"] = child_blocks
-                except Exception as e:
-                    logger.error(f"Failed to parse child page {block_id}: {e}")
-            
-            elif block_type == "child_database":
-                parsed_block["content"] = block[block_type].get("title", "")
-                # Parse database content
-                try:
-                    db_content = self._parse_database(block_id)
-                    if db_content:
-                        parsed_block["children"] = db_content
-                except Exception as e:
-                    logger.error(f"Failed to parse database {block_id}: {e}")
-            
-            else:
-                # For unsupported block types, at least capture the type
-                parsed_block["content"] = f"[Unsupported block type: {block_type}]"
-            
-            self.parsed_blocks_count += 1
-            return parsed_block
-        
+            child_blocks = self._parse_blocks_recursively(block.get("id"), depth + 1)
+            if child_blocks:
+                parsed_block["children"] = child_blocks
         except Exception as e:
-            logger.error(f"Error parsing block {block_id} of type {block_type}: {e}")
-            self.failed_blocks_count += 1
-            return None
+            logger.error(f"Failed to parse child page {block.get('id')}: {e}")
+        return parsed_block
+
+    def _parse_child_database(self, block, depth):
+        parsed_block = {
+            "id": block.get("id"),
+            "type": "child_database",
+            "depth": depth,
+            "content": block["child_database"].get("title", ""),
+            "metadata": {}
+        }
+        try:
+            db_content = self._parse_database(block.get("id"))
+            if db_content:
+                parsed_block["children"] = db_content
+        except Exception as e:
+            logger.error(f"Failed to parse database {block.get('id')}: {e}")
+        return parsed_block
+
+    def _parse_unsupported(self, block, depth):
+        block_type = block.get("type")
+        return {
+            "id": block.get("id"),
+            "type": block_type,
+            "depth": depth,
+            "content": f"[Unsupported block type: {block_type}]",
+            "metadata": {}
+        }
+
+        # Strategy implementations for each block type
+    def _parse_paragraph(self, block, depth):
+        return {
+            "id": block.get("id"),
+            "type": "paragraph",
+            "depth": depth,
+            "content": self._extract_rich_text(block["paragraph"].get("rich_text", [])),
+            "metadata": {}
+        }
+
+    def _parse_heading(self, block, depth):
+        block_type = block.get("type")
+        return {
+            "id": block.get("id"),
+            "type": block_type,
+            "depth": depth,
+            "content": self._extract_rich_text(block[block_type].get("rich_text", [])),
+            "metadata": {"level": int(block_type.split("_")[1])}
+        }
+
+    def _parse_list_item(self, block, depth):
+        block_type = block.get("type")
+        return {
+            "id": block.get("id"),
+            "type": block_type,
+            "depth": depth,
+            "content": self._extract_rich_text(block[block_type].get("rich_text", [])),
+            "metadata": {}
+        }
+
+    def _parse_to_do(self, block, depth):
+        return {
+            "id": block.get("id"),
+            "type": "to_do",
+            "depth": depth,
+            "content": self._extract_rich_text(block["to_do"].get("rich_text", [])),
+            "metadata": {"checked": block["to_do"].get("checked", False)}
+        }
+
+    def _parse_toggle(self, block, depth):
+        return {
+            "id": block.get("id"),
+            "type": "toggle",
+            "depth": depth,
+            "content": self._extract_rich_text(block["toggle"].get("rich_text", [])),
+            "metadata": {}
+        }
+
+    def _parse_code(self, block, depth):
+        return {
+            "id": block.get("id"),
+            "type": "code",
+            "depth": depth,
+            "content": self._extract_rich_text(block["code"].get("rich_text", [])),
+            "metadata": {"language": block["code"].get("language", "")}
+        }
+
+    def _parse_quote(self, block, depth):
+        return {
+            "id": block.get("id"),
+            "type": "quote",
+            "depth": depth,
+            "content": self._extract_rich_text(block["quote"].get("rich_text", [])),
+            "metadata": {}
+        }
+
+    def _parse_callout(self, block, depth):
+        meta = {}
+        if "icon" in block["callout"]:
+            meta["icon"] = block["callout"]["icon"]
+        return {
+            "id": block.get("id"),
+            "type": "callout",
+            "depth": depth,
+            "content": self._extract_rich_text(block["callout"].get("rich_text", [])),
+            "metadata": meta
+        }
+
+    def _parse_table(self, block, depth):
+        # TODO: Implement table parsing logic
+        return {"id": block.get("id"), "type": "table", "depth": depth, "content": None, "metadata": {}}
+
+    def _parse_table_row(self, block, depth):
+        # TODO: Implement table row parsing logic
+        return {"id": block.get("id"), "type": "table_row", "depth": depth, "content": None, "metadata": {}}
+
+    def _parse_image(self, block, depth):
+        # TODO: Implement image parsing logic
+        return {"id": block.get("id"), "type": "image", "depth": depth, "content": None, "metadata": {}}
+
+    def _parse_file(self, block, depth):
+        # TODO: Implement file parsing logic
+        return {"id": block.get("id"), "type": "file", "depth": depth, "content": None, "metadata": {}}
+
+    def _parse_pdf(self, block, depth):
+        # TODO: Implement PDF parsing logic
+        return {"id": block.get("id"), "type": "pdf", "depth": depth, "content": None, "metadata": {}}
+
+    def _parse_video(self, block, depth):
+        # TODO: Implement video parsing logic
+        return {"id": block.get("id"), "type": "video", "depth": depth, "content": None, "metadata": {}}
+
+    def _parse_bookmark(self, block, depth):
+        # TODO: Implement bookmark parsing logic
+        return {"id": block.get("id"), "type": "bookmark", "depth": depth, "content": None, "metadata": {}}
+
+    def _parse_embed(self, block, depth):
+        # TODO: Implement embed parsing logic
+        return {"id": block.get("id"), "type": "embed", "depth": depth, "content": None, "metadata": {}}
+
+    def _parse_equation(self, block, depth):
+        return {
+            "id": block.get("id"),
+            "type": "equation",
+            "depth": depth,
+            "content": block["equation"].get("expression", ""),
+            "metadata": {}
+        }
+
+    def _parse_divider(self, block, depth):
+        return {
+            "id": block.get("id"),
+            "type": "divider",
+            "depth": depth,
+            "content": "---",
+            "metadata": {}
+        }
+
+    def _parse_table_of_contents(self, block, depth):
+        return {
+            "id": block.get("id"),
+            "type": "table_of_contents",
+            "depth": depth,
+            "content": "Table of Contents",
+            "metadata": {}
+        }
+
+    def _parse_child_page(self, block, depth):
+        parsed_block = {
+            "id": block.get("id"),
+            "type": "child_page",
+            "depth": depth,
+            "content": block["child_page"].get("title", ""),
+            "metadata": {}
+        }
+        try:
+            child_blocks = self._parse_blocks_recursively(block.get("id"), depth + 1)
+            if child_blocks:
+                parsed_block["children"] = child_blocks
+        except Exception as e:
+            logger.error(f"Failed to parse child page {block.get('id')}: {e}")
+        return parsed_block
+
+    def _parse_child_database(self, block, depth):
+        parsed_block = {
+            "id": block.get("id"),
+            "type": "child_database",
+            "depth": depth,
+            "content": block["child_database"].get("title", ""),
+            "metadata": {}
+        }
+        try:
+            db_content = self._parse_database(block.get("id"))
+            if db_content:
+                parsed_block["children"] = db_content
+        except Exception as e:
+            logger.error(f"Failed to parse database {block.get('id')}: {e}")
+        return parsed_block
+
+    def _parse_unsupported(self, block, depth):
+        block_type = block.get("type")
+        return {
+            "id": block.get("id"),
+            "type": block_type,
+            "depth": depth,
+            "content": f"[Unsupported block type: {block_type}]",
+            "metadata": {}
+        }
+        
     
     def _parse_database(self, database_id: str) -> List[Dict[str, Any]]:
         """Parse a Notion database"""
