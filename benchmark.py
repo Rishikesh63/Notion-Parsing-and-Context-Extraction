@@ -5,7 +5,15 @@ from typing import Dict, Any, List
 from parser import NotionParser
 
 def analyze_output(parsed_data: Dict[str, Any]) -> Dict[str, Any]:
-    """Analyze the parsed output for metrics and insights"""
+    """
+    Analyze the parsed output from NotionParser for document metrics and insights.
+
+    Args:
+        parsed_data (Dict[str, Any]): The parsed Notion document data.
+
+    Returns:
+        Dict[str, Any]: Dictionary containing document title, type, creation and edit times, block type distribution, and total content length.
+    """
     
     analysis = {
         "document_title": parsed_data.get('title', 'N/A'),
@@ -35,7 +43,15 @@ def analyze_output(parsed_data: Dict[str, Any]) -> Dict[str, Any]:
     return analysis
 
 def validate_parsing_quality(parsed_data: Dict[str, Any]) -> Dict[str, Any]:
-    """Validate parsing quality against original structure"""
+    """
+    Validate the quality of parsing by checking hierarchy and metadata preservation against the original Notion structure.
+
+    Args:
+        parsed_data (Dict[str, Any]): The parsed Notion document data.
+
+    Returns:
+        Dict[str, Any]: Dictionary indicating if hierarchy and metadata are preserved, and listing any errors found.
+    """
     
     validation_results = {
         "hierarchy_preserved": True,
@@ -72,7 +88,16 @@ def validate_parsing_quality(parsed_data: Dict[str, Any]) -> Dict[str, Any]:
     return validation_results
 
 def benchmark_parsing(parser: NotionParser, page_id: str) -> Dict[str, Any]:
-    """Benchmark parsing performance"""
+    """
+    Benchmark the performance of the NotionParser on a single Notion page or database.
+
+    Args:
+        parser (NotionParser): The NotionParser instance.
+        page_id (str): The Notion page or database ID to parse.
+
+    Returns:
+        Dict[str, Any]: Dictionary containing parsing time, blocks per second, memory usage, parsed blocks, failed blocks, embedded files, and parsing efficacy.
+    """
     
     print("\n⏱️  Running performance benchmark...")
     start_time = time.time()
@@ -99,7 +124,16 @@ def benchmark_parsing(parser: NotionParser, page_id: str) -> Dict[str, Any]:
     return benchmark_results
 
 def benchmark_multiple_docs(parser: NotionParser, page_ids: List[str]) -> Dict[str, Any]:
-    """Benchmark parsing on multiple documents"""
+    """
+    Benchmark the NotionParser on multiple Notion documents and aggregate the results.
+
+    Args:
+        parser (NotionParser): The NotionParser instance.
+        page_ids (List[str]): List of Notion page or database IDs to parse.
+
+    Returns:
+        Dict[str, Any]: Dictionary containing individual benchmark results and summary statistics (averages, success/failure counts).
+    """
     
     results = []
     
