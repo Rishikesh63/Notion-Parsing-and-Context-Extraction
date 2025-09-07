@@ -1,7 +1,3 @@
-3. (Optional) Activate the Poetry shell for an isolated environment:
-   ```
-   poetry shell
-   ```
 # Notion Parsing and Context Extraction
 
 ## Overview
