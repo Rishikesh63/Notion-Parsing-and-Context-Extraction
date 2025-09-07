@@ -34,8 +34,9 @@ This project provides a scalable and extensible parser for Notion documents and 
 
 ## Usage
 
-1. Set up your `.env` file with your Notion integration token and the target page/database ID:
+1.  Set up your `.env` file with the following variables:
    ```
+   NOTION_BASE_URL="https://www.notion.so/"
    NOTION_TOKEN = "your_notion_token"
    PAGE_ID = "your_page_or_database_id"
    ```
