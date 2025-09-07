@@ -253,35 +253,27 @@ class NotionParser:
         }
 
     def _parse_table(self, block, depth):
-        # ...existing code...
         return {"id": block.get("id"), "type": "table", "depth": depth, "content": None, "metadata": {}}
 
     def _parse_table_row(self, block, depth):
-        # ...existing code...
         return {"id": block.get("id"), "type": "table_row", "depth": depth, "content": None, "metadata": {}}
 
     def _parse_image(self, block, depth):
-        # ...existing code...
         return {"id": block.get("id"), "type": "image", "depth": depth, "content": None, "metadata": {}}
 
     def _parse_file(self, block, depth):
-        # ...existing code...
         return {"id": block.get("id"), "type": "file", "depth": depth, "content": None, "metadata": {}}
 
     def _parse_pdf(self, block, depth):
-        # ...existing code...
         return {"id": block.get("id"), "type": "pdf", "depth": depth, "content": None, "metadata": {}}
 
     def _parse_video(self, block, depth):
-        # ...existing code...
         return {"id": block.get("id"), "type": "video", "depth": depth, "content": None, "metadata": {}}
 
     def _parse_bookmark(self, block, depth):
-        # ...existing code...
         return {"id": block.get("id"), "type": "bookmark", "depth": depth, "content": None, "metadata": {}}
 
     def _parse_embed(self, block, depth):
-        # ...existing code...
         return {"id": block.get("id"), "type": "embed", "depth": depth, "content": None, "metadata": {}}
 
     def _parse_equation(self, block, depth):
