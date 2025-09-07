@@ -1,0 +1,1105 @@
+{
+  "id": "26643c686ebf80989932c7384d36d9ac",
+  "type": "page",
+  "title": "ZED Parser Test Page - Complex Document Structure (1)",
+  "url": "https://www.notion.so/ZED-Parser-Test-Page-Complex-Document-Structure-1-26643c686ebf80989932c7384d36d9ac",
+  "created_time": "2025-09-06T16:47:00.000Z",
+  "last_edited_time": "2025-09-06T17:30:00.000Z",
+  "content": [
+    {
+      "id": "26643c68-6ebf-80aa-ade1-e497484db675",
+      "type": "paragraph",
+      "depth": 0,
+      "content": "This test document contains a variety of Notion block types and structures designed to challenge parsing systems. Use this to evaluate your parser's ability to handle diverse content formats.",
+      "metadata": {}
+    },
+    {
+      "id": "26643c68-6ebf-8046-9168-e42ff9b29587",
+      "type": "heading_2",
+      "depth": 0,
+      "content": "Document Hierarchy Test",
+      "metadata": {
+        "level": 2
+      }
+    },
+    {
+      "id": "26643c68-6ebf-802f-8350-e1cdd23552db",
+      "type": "heading_3",
+      "depth": 0,
+      "content": "Level 3 Heading",
+      "metadata": {
+        "level": 3
+      }
+    },
+    {
+      "id": "26643c68-6ebf-805a-80df-dfd5c4eaddba",
+      "type": "paragraph",
+      "depth": 0,
+      "content": "This section tests **bold text**, *italic text*, ~~strikethrough~~, and __underlined content__.",
+      "metadata": {}
+    },
+    {
+      "id": "26643c68-6ebf-80a0-ba2c-f4c58921d905",
+      "type": "quote",
+      "depth": 0,
+      "content": "This is a quote block that contains important contextual information. Quote blocks often contain key insights that should be preserved in parsing.",
+      "metadata": {}
+    },
+    {
+      "id": "26643c68-6ebf-807d-9d3d-dccb89c6ebde",
+      "type": "divider",
+      "depth": 0,
+      "content": "---",
+      "metadata": {}
+    },
+    {
+      "id": "26643c68-6ebf-809a-a263-f01d0b7230e0",
+      "type": "heading_2",
+      "depth": 0,
+      "content": "Complex Lists and Nesting",
+      "metadata": {
+        "level": 2
+      }
+    },
+    {
+      "id": "26643c68-6ebf-8016-b9d6-ca6f44a8e975",
+      "type": "heading_3",
+      "depth": 0,
+      "content": "Bulleted Lists with Nesting",
+      "metadata": {
+        "level": 3
+      }
+    },
+    {
+      "id": "26643c68-6ebf-8045-bccc-e6f2594289bf",
+      "type": "bulleted_list_item",
+      "depth": 0,
+      "content": "**Primary item with formatting**",
+      "metadata": {},
+      "children": [
+        {
+          "id": "26643c68-6ebf-807d-a78e-e6c60835cacb",
+          "type": "bulleted_list_item",
+          "depth": 1,
+          "content": "Nested item level 1",
+          "metadata": {},
+          "children": [
+            {
+              "id": "26643c68-6ebf-80fa-a9f9-d8c6918b777d",
+              "type": "bulleted_list_item",
+              "depth": 2,
+              "content": "Nested item level 2",
+              "metadata": {},
+              "children": [
+                {
+                  "id": "26643c68-6ebf-8068-96e3-d721ae786210",
+                  "type": "bulleted_list_item",
+                  "depth": 3,
+                  "content": "Deeply nested item level 3",
+                  "metadata": {}
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "id": "26643c68-6ebf-802b-9b62-e0dc2fc8489c",
+          "type": "bulleted_list_item",
+          "depth": 1,
+          "content": "Another level 1 item with `inline code`",
+          "metadata": {}
+        }
+      ]
+    },
+    {
+      "id": "26643c68-6ebf-8040-8ae8-f55cb2f85c48",
+      "type": "bulleted_list_item",
+      "depth": 0,
+      "content": "Second primary item",
+      "metadata": {},
+      "children": [
+        {
+          "id": "26643c68-6ebf-806c-8f7b-ea7c5a252a22",
+          "type": "bulleted_list_item",
+          "depth": 1,
+          "content": "Contains a [link to Google](https://google.com/)",
+          "metadata": {}
+        },
+        {
+          "id": "26643c68-6ebf-8078-afb4-c0613d7342c2",
+          "type": "bulleted_list_item",
+          "depth": 1,
+          "content": "Has multiple nested levels",
+          "metadata": {}
+        }
+      ]
+    },
+    {
+      "id": "26643c68-6ebf-801f-8322-cf8fe83247af",
+      "type": "heading_3",
+      "depth": 0,
+      "content": "Numbered Lists",
+      "metadata": {
+        "level": 3
+      }
+    },
+    {
+      "id": "26643c68-6ebf-8010-8665-e25ffe7e73ea",
+      "type": "numbered_list_item",
+      "depth": 0,
+      "content": "**First numbered item**",
+      "metadata": {},
+      "children": [
+        {
+          "id": "26643c68-6ebf-80a1-8ac2-f4cf062c4c1f",
+          "type": "numbered_list_item",
+          "depth": 1,
+          "content": "Sub-item A",
+          "metadata": {}
+        },
+        {
+          "id": "26643c68-6ebf-80c8-8670-d3596c6bfee7",
+          "type": "numbered_list_item",
+          "depth": 1,
+          "content": "Sub-item B with *emphasis*",
+          "metadata": {}
+        }
+      ]
+    },
+    {
+      "id": "26643c68-6ebf-8051-a903-cad8eceab4be",
+      "type": "numbered_list_item",
+      "depth": 0,
+      "content": "Second item with technical details",
+      "metadata": {},
+      "children": [
+        {
+          "id": "26643c68-6ebf-8010-8f1c-f124266c9c3a",
+          "type": "bulleted_list_item",
+          "depth": 1,
+          "content": "Mixed list types (numbered parent, bullet children)",
+          "metadata": {}
+        },
+        {
+          "id": "26643c68-6ebf-80c3-899e-ce39346cb78e",
+          "type": "bulleted_list_item",
+          "depth": 1,
+          "content": "Parser should maintain hierarchy",
+          "metadata": {}
+        }
+      ]
+    },
+    {
+      "id": "26643c68-6ebf-80c6-93a1-cac5b4f4d334",
+      "type": "numbered_list_item",
+      "depth": 0,
+      "content": "Final numbered item",
+      "metadata": {}
+    },
+    {
+      "id": "26643c68-6ebf-809d-bf2c-f04d735a3d85",
+      "type": "heading_3",
+      "depth": 0,
+      "content": "To-Do Lists",
+      "metadata": {
+        "level": 3
+      }
+    },
+    {
+      "id": "26643c68-6ebf-801c-a405-e9b085a9d7d8",
+      "type": "to_do",
+      "depth": 0,
+      "content": "Completed task with **formatting**",
+      "metadata": {
+        "checked": true
+      }
+    },
+    {
+      "id": "26643c68-6ebf-80a1-9694-ee14a6a3b5e3",
+      "type": "to_do",
+      "depth": 0,
+      "content": "Incomplete task with `code snippet`",
+      "metadata": {
+        "checked": false
+      }
+    },
+    {
+      "id": "26643c68-6ebf-80ca-bd51-daaa41f486c1",
+      "type": "to_do",
+      "depth": 0,
+      "content": "Another completed item",
+      "metadata": {
+        "checked": true
+      },
+      "children": [
+        {
+          "id": "26643c68-6ebf-802d-99fc-d65d9356335f",
+          "type": "to_do",
+          "depth": 1,
+          "content": "Nested incomplete subtask",
+          "metadata": {
+            "checked": false
+          }
+        },
+        {
+          "id": "26643c68-6ebf-80ca-be70-c84313114fa2",
+          "type": "to_do",
+          "depth": 1,
+          "content": "Nested completed subtask",
+          "metadata": {
+            "checked": true
+          }
+        }
+      ]
+    },
+    {
+      "id": "26643c68-6ebf-80c4-8eed-da8c9635c40e",
+      "type": "to_do",
+      "depth": 0,
+      "content": "Complex task with [external link](https://notion.so/)",
+      "metadata": {
+        "checked": false
+      }
+    },
+    {
+      "id": "26643c68-6ebf-804c-a023-f9c18d639f8e",
+      "type": "divider",
+      "depth": 0,
+      "content": "---",
+      "metadata": {}
+    },
+    {
+      "id": "26643c68-6ebf-80b1-b15f-dcaa87b30073",
+      "type": "heading_2",
+      "depth": 0,
+      "content": "Toggle Sections (Interactive Content)",
+      "metadata": {
+        "level": 2
+      }
+    },
+    {
+      "id": "26643c68-6ebf-803d-a149-cf6e37ee39c3",
+      "type": "toggle",
+      "depth": 0,
+      "content": "**Collapsible Section 1: Technical Specifications**",
+      "metadata": {},
+      "children": [
+        {
+          "id": "26643c68-6ebf-80ea-97e5-f155be902359",
+          "type": "paragraph",
+          "depth": 1,
+          "content": "This content is hidden behind a toggle. Parsers need to handle both the toggle header and its nested content.",
+          "metadata": {}
+        },
+        {
+          "id": "26643c68-6ebf-80d9-98e6-ff2c321a02c2",
+          "type": "code",
+          "depth": 1,
+          "content": "# Code block within toggle\ndef parse_notion_doc(doc_id):\n    return extract_content(doc_id)",
+          "metadata": {
+            "language": "python"
+          }
+        },
+        {
+          "id": "26643c68-6ebf-8042-bfd1-e485d91699f1",
+          "type": "bulleted_list_item",
+          "depth": 1,
+          "content": "Nested list within toggle",
+          "metadata": {}
+        },
+        {
+          "id": "26643c68-6ebf-80d6-9b2a-d72f400769e6",
+          "type": "bulleted_list_item",
+          "depth": 1,
+          "content": "Another nested item",
+          "metadata": {}
+        }
+      ]
+    },
+    {
+      "id": "26643c68-6ebf-800b-b4b8-fa6b9d4c6767",
+      "type": "heading_2",
+      "depth": 0,
+      "content": "**Toggle Heading 2: Architecture Details**",
+      "metadata": {
+        "level": 2
+      },
+      "children": [
+        {
+          "id": "26643c68-6ebf-80f3-9c04-e30833f05c2b",
+          "type": "paragraph",
+          "depth": 1,
+          "content": "Toggle headings combine heading styles with collapsible functionality.",
+          "metadata": {}
+        },
+        {
+          "id": "26643c68-6ebf-806c-a476-f0e9532bf470",
+          "type": "quote",
+          "depth": 1,
+          "content": "Important architectural note hidden in toggle",
+          "metadata": {}
+        },
+        {
+          "id": "26643c68-6ebf-80e7-a5d5-da732825952a",
+          "type": "heading_3",
+          "depth": 1,
+          "content": "Sub-heading within toggle",
+          "metadata": {
+            "level": 3
+          }
+        },
+        {
+          "id": "26643c68-6ebf-8010-9e0d-e479e67de526",
+          "type": "paragraph",
+          "depth": 1,
+          "content": "Regular content continues here.",
+          "metadata": {}
+        }
+      ]
+    },
+    {
+      "id": "26643c68-6ebf-801b-82b5-c87f440d8fe8",
+      "type": "divider",
+      "depth": 0,
+      "content": "---",
+      "metadata": {}
+    },
+    {
+      "id": "26643c68-6ebf-80be-917a-e86ed94a7c9b",
+      "type": "heading_2",
+      "depth": 0,
+      "content": "Tables and Structured Data",
+      "metadata": {
+        "level": 2
+      }
+    },
+    {
+      "id": "26643c68-6ebf-8085-b812-ce5d312936c0",
+      "type": "table",
+      "depth": 0,
+      "content": [],
+      "metadata": {
+        "has_column_header": true,
+        "has_row_header": false,
+        "table_width": 3
+      },
+      "children": [
+        {
+          "id": "26643c68-6ebf-8042-a807-f997a44db979",
+          "type": "table_row",
+          "depth": 1,
+          "content": [
+            "**Component**",
+            "**Status**",
+            "**Priority**"
+          ],
+          "metadata": {}
+        },
+        {
+          "id": "26643c68-6ebf-80ba-95d4-c81ed8ab149f",
+          "type": "table_row",
+          "depth": 1,
+          "content": [
+            "Parser Engine",
+            "✅ Complete",
+            "High"
+          ],
+          "metadata": {}
+        },
+        {
+          "id": "26643c68-6ebf-8027-b885-e4505fdf1ecc",
+          "type": "table_row",
+          "depth": 1,
+          "content": [
+            "Context Extraction",
+            "🔄 In Progress",
+            "Critical"
+          ],
+          "metadata": {}
+        },
+        {
+          "id": "26643c68-6ebf-80be-9c72-d93549ec805c",
+          "type": "table_row",
+          "depth": 1,
+          "content": [
+            "API Interface",
+            "❌ Pending",
+            "Medium"
+          ],
+          "metadata": {}
+        }
+      ]
+    },
+    {
+      "id": "26643c68-6ebf-8076-a277-e9705d6cca2c",
+      "type": "divider",
+      "depth": 0,
+      "content": "---",
+      "metadata": {}
+    },
+    {
+      "id": "26643c68-6ebf-8008-a16b-ca37c363644f",
+      "type": "heading_2",
+      "depth": 0,
+      "content": "Code Blocks and Technical Content",
+      "metadata": {
+        "level": 2
+      }
+    },
+    {
+      "id": "26643c68-6ebf-80be-864d-dc9f36645e94",
+      "type": "heading_3",
+      "depth": 0,
+      "content": "Python Implementation Example",
+      "metadata": {
+        "level": 3
+      }
+    },
+    {
+      "id": "26643c68-6ebf-800b-b628-c59e1f0acf1c",
+      "type": "code",
+      "depth": 0,
+      "content": "class NotionParser:\n    def __init__(self, api_key):\n        self.client = NotionClient(api_key)\n    \n    def parse_page(self, page_id):\n        \"\"\"Extract structured content from Notion page\"\"\"\n        blocks = self.client.get_blocks(page_id)\n        return self._process_blocks(blocks)\n    \n    def _process_blocks(self, blocks):\n        result = []\n        for block in blocks:\n            if block.type == 'heading_1':\n                result.append({\n                    'type': 'heading',\n                    'level': 1,\n                    'text': block.heading_[1.rich](http://1.rich/)_text\n                })\n        return result",
+      "metadata": {
+        "language": "python"
+      }
+    },
+    {
+      "id": "26643c68-6ebf-803c-9a76-f26734b1715b",
+      "type": "heading_3",
+      "depth": 0,
+      "content": "JSON Schema Example",
+      "metadata": {
+        "level": 3
+      }
+    },
+    {
+      "id": "26643c68-6ebf-80a5-90c8-c7e3a1c73913",
+      "type": "code",
+      "depth": 0,
+      "content": "{\n  \"document_structure\": {\n    \"title\": \"Parsed Document\",\n    \"blocks\": [\n      {\n        \"type\": \"heading\",\n        \"level\": 1,\n        \"content\": \"Section Title\",\n        \"formatting\": [\"bold\"]\n      },\n      {\n        \"type\": \"paragraph\",\n        \"content\": \"Regular text with formatting\",\n        \"inline_elements\": [\n          {\"type\": \"link\", \"url\": \"[https://example.com](https://example.com/)\", \"text\": \"link text\"}\n        ]\n      }\n    ]\n  }\n}",
+      "metadata": {
+        "language": "json"
+      }
+    },
+    {
+      "id": "26643c68-6ebf-801d-9633-c9e03a94abb3",
+      "type": "divider",
+      "depth": 0,
+      "content": "---",
+      "metadata": {}
+    },
+    {
+      "id": "26643c68-6ebf-8053-a75a-d820def90ea8",
+      "type": "heading_2",
+      "depth": 0,
+      "content": "Mathematical Content",
+      "metadata": {
+        "level": 2
+      }
+    },
+    {
+      "id": "26643c68-6ebf-80fb-8c20-f3ea7cd36001",
+      "type": "paragraph",
+      "depth": 0,
+      "content": "Inline math: The formula E = mc^2 demonstrates energy-mass equivalence.",
+      "metadata": {}
+    },
+    {
+      "id": "26643c68-6ebf-80e5-97fa-c6abcad73b23",
+      "type": "paragraph",
+      "depth": 0,
+      "content": "Block equation:",
+      "metadata": {}
+    },
+    {
+      "id": "26643c68-6ebf-8009-b027-f65a7fbd5ab7",
+      "type": "paragraph",
+      "depth": 0,
+      "content": "$$int_{-infty}^{infty} e^{-x^2} dx = sqrt{pi}$$",
+      "metadata": {}
+    },
+    {
+      "id": "26643c68-6ebf-8012-87e6-ffc30158a5a9",
+      "type": "divider",
+      "depth": 0,
+      "content": "---",
+      "metadata": {}
+    },
+    {
+      "id": "26643c68-6ebf-804d-9f2b-d7782a6d708c",
+      "type": "heading_2",
+      "depth": 0,
+      "content": "Callouts and Contextual Information",
+      "metadata": {
+        "level": 2
+      }
+    },
+    {
+      "id": "26643c68-6ebf-800d-8a74-c1413518b931",
+      "type": "callout",
+      "depth": 0,
+      "content": "**Warning**: This is a warning callout that contains important information parsers should preserve. The icon and color provide additional context.",
+      "metadata": {
+        "icon": {
+          "type": "emoji",
+          "emoji": "⚠️"
+        }
+      }
+    },
+    {
+      "id": "26643c68-6ebf-8089-8333-cee9b9fefeab",
+      "type": "callout",
+      "depth": 0,
+      "content": "**Tip**: Callouts often contain key insights, warnings, or supplementary information that adds significant value to the document context.",
+      "metadata": {
+        "icon": {
+          "type": "emoji",
+          "emoji": "💡"
+        }
+      }
+    },
+    {
+      "id": "26643c68-6ebf-80c3-93da-c1ce33127d96",
+      "type": "callout",
+      "depth": 0,
+      "content": "**Critical**: Parser systems must maintain the semantic importance conveyed by callout styling and icons.",
+      "metadata": {
+        "icon": {
+          "type": "emoji",
+          "emoji": "🔥"
+        }
+      }
+    },
+    {
+      "id": "26643c68-6ebf-80b8-a6dd-c543a1aef463",
+      "type": "divider",
+      "depth": 0,
+      "content": "---",
+      "metadata": {}
+    },
+    {
+      "id": "26643c68-6ebf-80a6-a188-e53f2d23de59",
+      "type": "heading_2",
+      "depth": 0,
+      "content": "Multi-Column Layout",
+      "metadata": {
+        "level": 2
+      }
+    },
+    {
+      "id": "26643c68-6ebf-8099-b553-dd0b4f6fa73d",
+      "type": "column_list",
+      "depth": 0,
+      "content": "[Unsupported block type: column_list]",
+      "metadata": {},
+      "children": [
+        {
+          "id": "26643c68-6ebf-8040-9066-fc1dc35b9248",
+          "type": "column",
+          "depth": 1,
+          "content": "[Unsupported block type: column]",
+          "metadata": {},
+          "children": [
+            {
+              "id": "26643c68-6ebf-8099-97b6-d1278cc7f4e7",
+              "type": "heading_3",
+              "depth": 2,
+              "content": "Left Column",
+              "metadata": {
+                "level": 3
+              }
+            },
+            {
+              "id": "26643c68-6ebf-80c5-9d0a-ea6b9bc7782e",
+              "type": "paragraph",
+              "depth": 2,
+              "content": "This content appears in the left column. Multi-column layouts present unique challenges for parsers in maintaining reading order and structure.",
+              "metadata": {}
+            },
+            {
+              "id": "26643c68-6ebf-808a-855b-f0eddf0c3c48",
+              "type": "bulleted_list_item",
+              "depth": 2,
+              "content": "Left column item 1",
+              "metadata": {}
+            },
+            {
+              "id": "26643c68-6ebf-804b-aecb-ffb2749c84f9",
+              "type": "bulleted_list_item",
+              "depth": 2,
+              "content": "Left column item 2",
+              "metadata": {}
+            },
+            {
+              "id": "26643c68-6ebf-806f-a6b4-c98ea8e9b52b",
+              "type": "bulleted_list_item",
+              "depth": 2,
+              "content": "Left column item 3",
+              "metadata": {}
+            }
+          ]
+        },
+        {
+          "id": "26643c68-6ebf-809f-9fd2-c1c5abba990a",
+          "type": "column",
+          "depth": 1,
+          "content": "[Unsupported block type: column]",
+          "metadata": {},
+          "children": [
+            {
+              "id": "26643c68-6ebf-8016-98f1-c3b30f0c0934",
+              "type": "heading_3",
+              "depth": 2,
+              "content": "Right Column",
+              "metadata": {
+                "level": 3
+              }
+            },
+            {
+              "id": "26643c68-6ebf-8002-89fa-cebb98c95a84",
+              "type": "paragraph",
+              "depth": 2,
+              "content": "This content appears in the right column. The parser should understand the relationship between columns.",
+              "metadata": {}
+            },
+            {
+              "id": "26643c68-6ebf-80e0-9877-e91d8cab9f24",
+              "type": "numbered_list_item",
+              "depth": 2,
+              "content": "Right column numbered item",
+              "metadata": {}
+            },
+            {
+              "id": "26643c68-6ebf-8086-9be0-fb0e4086f200",
+              "type": "numbered_list_item",
+              "depth": 2,
+              "content": "Another numbered item",
+              "metadata": {}
+            },
+            {
+              "id": "26643c68-6ebf-804f-8b4b-df9b2d9b9f6c",
+              "type": "numbered_list_item",
+              "depth": 2,
+              "content": "Final item with `code`",
+              "metadata": {}
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "26643c68-6ebf-8063-91d1-c5b176a7a871",
+      "type": "divider",
+      "depth": 0,
+      "content": "---",
+      "metadata": {}
+    },
+    {
+      "id": "26643c68-6ebf-80c8-8d9d-fb687b663586",
+      "type": "heading_2",
+      "depth": 0,
+      "content": "References and Links",
+      "metadata": {
+        "level": 2
+      }
+    },
+    {
+      "id": "26643c68-6ebf-8093-af49-c54a3db38cc0",
+      "type": "heading_3",
+      "depth": 0,
+      "content": "External Links",
+      "metadata": {
+        "level": 3
+      }
+    },
+    {
+      "id": "26643c68-6ebf-8075-885d-cf565a62669f",
+      "type": "bulleted_list_item",
+      "depth": 0,
+      "content": "[Official Notion API Documentation](https://developers.notion.com/)",
+      "metadata": {}
+    },
+    {
+      "id": "26643c68-6ebf-80d2-b03e-d5ed2d98545e",
+      "type": "bulleted_list_item",
+      "depth": 0,
+      "content": "[ZED Company Website](https://zed.com/)",
+      "metadata": {}
+    },
+    {
+      "id": "26643c68-6ebf-80e0-a457-d9021d54f279",
+      "type": "bulleted_list_item",
+      "depth": 0,
+      "content": "[LangChain Framework](https://langchain.com/)",
+      "metadata": {}
+    },
+    {
+      "id": "26643c68-6ebf-8058-b3fb-ea0c7c256b6f",
+      "type": "heading_3",
+      "depth": 0,
+      "content": "Internal References",
+      "metadata": {
+        "level": 3
+      }
+    },
+    {
+      "id": "26643c68-6ebf-80d8-8279-fef0d095dece",
+      "type": "paragraph",
+      "depth": 0,
+      "content": "This section would typically contain links to other Notion pages, but for testing purposes, imagine these as:",
+      "metadata": {}
+    },
+    {
+      "id": "26643c68-6ebf-8088-a7e9-ec84970e2a0d",
+      "type": "bulleted_list_item",
+      "depth": 0,
+      "content": "Reference to Technical Specification Document",
+      "metadata": {}
+    },
+    {
+      "id": "26643c68-6ebf-80b2-85be-f2f2a1e40712",
+      "type": "bulleted_list_item",
+      "depth": 0,
+      "content": "Link to Meeting Notes from 2025-09-01",
+      "metadata": {}
+    },
+    {
+      "id": "26643c68-6ebf-8060-84dd-ff296c122a80",
+      "type": "bulleted_list_item",
+      "depth": 0,
+      "content": "Connection to Product Requirements Database",
+      "metadata": {}
+    },
+    {
+      "id": "26643c68-6ebf-80bd-87b7-fa41d22c8220",
+      "type": "divider",
+      "depth": 0,
+      "content": "---",
+      "metadata": {}
+    },
+    {
+      "id": "26643c68-6ebf-80ca-9902-dad2f9ad65c9",
+      "type": "heading_2",
+      "depth": 0,
+      "content": "Edge Cases and Special Characters",
+      "metadata": {
+        "level": 2
+      }
+    },
+    {
+      "id": "26643c68-6ebf-803e-b583-fad18ebcf91f",
+      "type": "heading_3",
+      "depth": 0,
+      "content": "Special Characters",
+      "metadata": {
+        "level": 3
+      }
+    },
+    {
+      "id": "26643c68-6ebf-802f-8f59-e965b64a3e5e",
+      "type": "paragraph",
+      "depth": 0,
+      "content": "Testing unicode and special chars: ñ, ü, 中文, العربية, 🚀, ∑, ∆, ∞",
+      "metadata": {}
+    },
+    {
+      "id": "26643c68-6ebf-8016-8faf-da7c93becf7d",
+      "type": "heading_3",
+      "depth": 0,
+      "content": "Mixed Content Types",
+      "metadata": {
+        "level": 3
+      }
+    },
+    {
+      "id": "26643c68-6ebf-809b-8020-e46cae60e27c",
+      "type": "paragraph",
+      "depth": 0,
+      "content": "Paragraph with **bold**, *italic*, `code`, [link](https://example.com/), and special chars: @#$%^&*",
+      "metadata": {}
+    },
+    {
+      "id": "26643c68-6ebf-80bf-843c-d881107b8ca1",
+      "type": "heading_3",
+      "depth": 0,
+      "content": "Deeply Nested Structure",
+      "metadata": {
+        "level": 3
+      }
+    },
+    {
+      "id": "26643c68-6ebf-80ba-ace9-d68003a4d837",
+      "type": "bulleted_list_item",
+      "depth": 0,
+      "content": "Level 1",
+      "metadata": {},
+      "children": [
+        {
+          "id": "26643c68-6ebf-80e3-9c6e-c9de6a622a7c",
+          "type": "bulleted_list_item",
+          "depth": 1,
+          "content": "Level 2",
+          "metadata": {},
+          "children": [
+            {
+              "id": "26643c68-6ebf-806d-aaa8-dfb97f1208d1",
+              "type": "bulleted_list_item",
+              "depth": 2,
+              "content": "Level 3",
+              "metadata": {},
+              "children": [
+                {
+                  "id": "26643c68-6ebf-8043-aeb9-fc77d07a1627",
+                  "type": "bulleted_list_item",
+                  "depth": 3,
+                  "content": "Level 4",
+                  "metadata": {},
+                  "children": [
+                    {
+                      "id": "26643c68-6ebf-80ca-95d3-d4f75c1dc152",
+                      "type": "bulleted_list_item",
+                      "depth": 4,
+                      "content": "Level 5 (maximum nesting)",
+                      "metadata": {},
+                      "children": [
+                        {
+                          "id": "26643c68-6ebf-8067-aaa0-fd95620d05e5",
+                          "type": "bulleted_list_item",
+                          "depth": 5,
+                          "content": "This should test parser limits",
+                          "metadata": {}
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "26643c68-6ebf-80f1-a9c8-f565823e8bc2",
+      "type": "divider",
+      "depth": 0,
+      "content": "---",
+      "metadata": {}
+    },
+    {
+      "id": "26643c68-6ebf-800e-ac35-cfd99f667d9e",
+      "type": "heading_2",
+      "depth": 0,
+      "content": "Document Metadata Section",
+      "metadata": {
+        "level": 2
+      }
+    },
+    {
+      "id": "26643c68-6ebf-8089-aaae-d0ccfe20364f",
+      "type": "paragraph",
+      "depth": 0,
+      "content": "**Document Purpose**: Parser testing and validation\n",
+      "metadata": {}
+    },
+    {
+      "id": "26643c68-6ebf-80cc-9a5a-dddfbeb74097",
+      "type": "paragraph",
+      "depth": 0,
+      "content": "**Created**: 2025-09-06\n",
+      "metadata": {}
+    },
+    {
+      "id": "26643c68-6ebf-80f2-b5db-d63b4e2681db",
+      "type": "paragraph",
+      "depth": 0,
+      "content": "**Author**: @Rishikesh Maddheshiya\n",
+      "metadata": {}
+    },
+    {
+      "id": "26643c68-6ebf-80fc-8e43-c31e358b9c90",
+      "type": "paragraph",
+      "depth": 0,
+      "content": "**Version**: 1.0\n",
+      "metadata": {}
+    },
+    {
+      "id": "26643c68-6ebf-80d4-adf4-c4545f91850b",
+      "type": "paragraph",
+      "depth": 0,
+      "content": "**Tags**: #parser-testing #notion-api #zed-project",
+      "metadata": {}
+    },
+    {
+      "id": "26643c68-6ebf-8022-826f-c07d4d80484a",
+      "type": "divider",
+      "depth": 0,
+      "content": "---",
+      "metadata": {}
+    },
+    {
+      "id": "26643c68-6ebf-80b2-924c-fbdeb143c151",
+      "type": "heading_2",
+      "depth": 0,
+      "content": "Summary for Parser Validation",
+      "metadata": {
+        "level": 2
+      }
+    },
+    {
+      "id": "26643c68-6ebf-80b6-b2cc-e48bef184d0e",
+      "type": "paragraph",
+      "depth": 0,
+      "content": "This document contains:",
+      "metadata": {}
+    },
+    {
+      "id": "26643c68-6ebf-801c-98d9-d334815ab633",
+      "type": "bulleted_list_item",
+      "depth": 0,
+      "content": "✅ Multiple heading levels (H1, H2, H3)",
+      "metadata": {}
+    },
+    {
+      "id": "26643c68-6ebf-8065-9851-fd303a94149b",
+      "type": "bulleted_list_item",
+      "depth": 0,
+      "content": "✅ Various text formatting (bold, italic, underline, strikethrough)",
+      "metadata": {}
+    },
+    {
+      "id": "26643c68-6ebf-8094-b963-d535797e8bb6",
+      "type": "bulleted_list_item",
+      "depth": 0,
+      "content": "✅ Different list types (bullet, numbered, to-do)",
+      "metadata": {}
+    },
+    {
+      "id": "26643c68-6ebf-80aa-aa40-dd5eb53ad97e",
+      "type": "bulleted_list_item",
+      "depth": 0,
+      "content": "✅ Nested content structures",
+      "metadata": {}
+    },
+    {
+      "id": "26643c68-6ebf-80db-a72d-c29d016dcb1c",
+      "type": "bulleted_list_item",
+      "depth": 0,
+      "content": "✅ Tables with formatting",
+      "metadata": {}
+    },
+    {
+      "id": "26643c68-6ebf-80db-bfd6-e267cc97aea0",
+      "type": "bulleted_list_item",
+      "depth": 0,
+      "content": "✅ Code blocks (multiple languages)",
+      "metadata": {}
+    },
+    {
+      "id": "26643c68-6ebf-80a0-8854-d431f6196ce1",
+      "type": "bulleted_list_item",
+      "depth": 0,
+      "content": "✅ Mathematical expressions",
+      "metadata": {}
+    },
+    {
+      "id": "26643c68-6ebf-80d1-babb-c9857131e6d0",
+      "type": "bulleted_list_item",
+      "depth": 0,
+      "content": "✅ Callouts with icons and colors",
+      "metadata": {}
+    },
+    {
+      "id": "26643c68-6ebf-800b-bfb1-e021e2ba7e62",
+      "type": "bulleted_list_item",
+      "depth": 0,
+      "content": "✅ Multi-column layouts",
+      "metadata": {}
+    },
+    {
+      "id": "26643c68-6ebf-801c-9de7-d9a943175673",
+      "type": "bulleted_list_item",
+      "depth": 0,
+      "content": "✅ Links and references",
+      "metadata": {}
+    },
+    {
+      "id": "26643c68-6ebf-806b-818b-c0835152d5ae",
+      "type": "bulleted_list_item",
+      "depth": 0,
+      "content": "✅ Special characters and unicode",
+      "metadata": {}
+    },
+    {
+      "id": "26643c68-6ebf-804f-8967-fbd2abc62683",
+      "type": "bulleted_list_item",
+      "depth": 0,
+      "content": "✅ Toggle sections",
+      "metadata": {}
+    },
+    {
+      "id": "26643c68-6ebf-80f8-aae6-e4fa1c8bdd05",
+      "type": "bulleted_list_item",
+      "depth": 0,
+      "content": "✅ Quotes and dividers",
+      "metadata": {}
+    },
+    {
+      "id": "26643c68-6ebf-8016-82c4-e9efe8ae72c9",
+      "type": "paragraph",
+      "depth": 0,
+      "content": "**Parser Success Metrics to Track:**",
+      "metadata": {}
+    },
+    {
+      "id": "26643c68-6ebf-80e7-9c01-d1ab5aaba991",
+      "type": "numbered_list_item",
+      "depth": 0,
+      "content": "Block type recognition accuracy",
+      "metadata": {}
+    },
+    {
+      "id": "26643c68-6ebf-8017-90a5-d3f22cd424df",
+      "type": "numbered_list_item",
+      "depth": 0,
+      "content": "Formatting preservation",
+      "metadata": {}
+    },
+    {
+      "id": "26643c68-6ebf-803d-9ed0-e98b2d0a2d4e",
+      "type": "numbered_list_item",
+      "depth": 0,
+      "content": "Hierarchy maintenance",
+      "metadata": {}
+    },
+    {
+      "id": "26643c68-6ebf-80ed-b6d9-f0700571c27d",
+      "type": "numbered_list_item",
+      "depth": 0,
+      "content": "Content completeness",
+      "metadata": {}
+    },
+    {
+      "id": "26643c68-6ebf-80ff-93e7-cd7e28f2b456",
+      "type": "numbered_list_item",
+      "depth": 0,
+      "content": "Special character handling",
+      "metadata": {}
+    },
+    {
+      "id": "26643c68-6ebf-8056-844f-e6283ed887b0",
+      "type": "numbered_list_item",
+      "depth": 0,
+      "content": "Nested structure integrity",
+      "metadata": {}
+    }
+  ],
+  "metadata": {
+    "parsed_blocks": 135,
+    "failed_blocks": 0,
+    "embedded_files": 0,
+    "parsing_efficacy": "100.00%",
+    "total_blocks": 135
+  }
+}

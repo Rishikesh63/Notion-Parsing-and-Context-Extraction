@@ -17,8 +17,16 @@ def main():
     # Parse the document
     result = parser.parse_document(PAGE_ID)
     
-    # Save the structured output
-    with open("parsed_output.json", "w", encoding="utf-8") as f:
+    # Create output folders if they don't exist
+    parsed_output_dir = "parsed_outputs"
+    ai_documents_dir = "ai_documents"
+    os.makedirs(parsed_output_dir, exist_ok=True)
+    os.makedirs(ai_documents_dir, exist_ok=True)
+
+    # Save the structured output with unique filename per PAGE_ID
+    safe_page_id = PAGE_ID.replace('-', '').replace(' ', '').replace('/', '')
+    output_json = os.path.join(parsed_output_dir, f"parsed_output_{safe_page_id}.json")
+    with open(output_json, "w", encoding="utf-8") as f:
         json.dump(result, f, ensure_ascii=False, indent=2)
     
     # Convert to LangChain documents for AI workflows
@@ -31,8 +39,9 @@ def main():
     )
     split_docs = text_splitter.split_documents(documents)
     
-    # Save the AI-ready documents
-    with open("ai_documents.json", "w", encoding="utf-8") as f:
+    # Save the AI-ready documents with unique filename per PAGE_ID
+    ai_json = os.path.join(ai_documents_dir, f"ai_documents_{safe_page_id}.json")
+    with open(ai_json, "w", encoding="utf-8") as f:
         # Convert LangChain documents to serializable format
         serializable_docs = []
         for doc in split_docs:
@@ -48,7 +57,7 @@ def main():
     print(f"📦 Total blocks parsed: {result['metadata']['parsed_blocks']}")
     print(f"❌ Failed blocks: {result['metadata']['failed_blocks']}")
     print(f"📎 Embedded files: {result['metadata']['embedded_files']}")
-    print("💾 Output saved to parsed_output.json and ai_documents.json")
+    print(f"💾 Output saved to {output_json} and {ai_json}")
     
     # Perform analysis
     analysis = analyze_output(result)

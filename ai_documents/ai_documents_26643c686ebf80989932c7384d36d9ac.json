@@ -1,0 +1,90 @@
+[
+  {
+    "page_content": "This test document contains a variety of Notion block types and structures designed to challenge parsing systems. Use this to evaluate your parser's ability to handle diverse content formats.\n## Document Hierarchy Test\n### Level 3 Heading\nThis section tests **bold text**, *italic text*, ~~strikethrough~~, and __underlined content__.\nThis is a quote block that contains important contextual information. Quote blocks often contain key insights that should be preserved in parsing.\n---\n## Complex Lists and Nesting\n### Bulleted Lists with Nesting\n* **Primary item with formatting**\n  * Nested item level 1\n    * Nested item level 2\n      * Deeply nested item level 3\n  * Another level 1 item with `inline code`\n* Second primary item\n  * Contains a [link to Google](https://google.com/)\n  * Has multiple nested levels\n### Numbered Lists\n1. **First numbered item**\n  1. Sub-item A\n  1. Sub-item B with *emphasis*\n1. Second item with technical details",
+    "metadata": {
+      "source": "https://www.notion.so/ZED-Parser-Test-Page-Complex-Document-Structure-1-26643c686ebf80989932c7384d36d9ac",
+      "title": "ZED Parser Test Page - Complex Document Structure (1)",
+      "type": "page",
+      "id": "26643c686ebf80989932c7384d36d9ac",
+      "created_time": "2025-09-06T16:47:00.000Z",
+      "last_edited_time": "2025-09-06T17:30:00.000Z"
+    }
+  },
+  {
+    "page_content": "* Has multiple nested levels\n### Numbered Lists\n1. **First numbered item**\n  1. Sub-item A\n  1. Sub-item B with *emphasis*\n1. Second item with technical details\n  * Mixed list types (numbered parent, bullet children)\n  * Parser should maintain hierarchy\n1. Final numbered item\n### To-Do Lists\n[x] Completed task with **formatting**\n[ ] Incomplete task with `code snippet`\n[x] Another completed item\n  [ ] Nested incomplete subtask\n  [x] Nested completed subtask\n[ ] Complex task with [external link](https://notion.so/)\n---\n## Toggle Sections (Interactive Content)\n  This content is hidden behind a toggle. Parsers need to handle both the toggle header and its nested content.\n  ```python\n# Code block within toggle\ndef parse_notion_doc(doc_id):\n    return extract_content(doc_id)\n```\n  * Nested list within toggle\n  * Another nested item\n## **Toggle Heading 2: Architecture Details**\n  Toggle headings combine heading styles with collapsible functionality.",
+    "metadata": {
+      "source": "https://www.notion.so/ZED-Parser-Test-Page-Complex-Document-Structure-1-26643c686ebf80989932c7384d36d9ac",
+      "title": "ZED Parser Test Page - Complex Document Structure (1)",
+      "type": "page",
+      "id": "26643c686ebf80989932c7384d36d9ac",
+      "created_time": "2025-09-06T16:47:00.000Z",
+      "last_edited_time": "2025-09-06T17:30:00.000Z"
+    }
+  },
+  {
+    "page_content": "```\n  * Nested list within toggle\n  * Another nested item\n## **Toggle Heading 2: Architecture Details**\n  Toggle headings combine heading styles with collapsible functionality.\n  Important architectural note hidden in toggle\n  ### Sub-heading within toggle\n  Regular content continues here.\n---\n## Tables and Structured Data\n| **Component** | **Status** | **Priority** |\n| Parser Engine | ✅ Complete | High |\n| Context Extraction | 🔄 In Progress | Critical |\n| API Interface | ❌ Pending | Medium |\n---\n## Code Blocks and Technical Content\n### Python Implementation Example\n```python\nclass NotionParser:\n    def __init__(self, api_key):\n        self.client = NotionClient(api_key)\n    \n    def parse_page(self, page_id):\n        \"\"\"Extract structured content from Notion page\"\"\"\n        blocks = self.client.get_blocks(page_id)\n        return self._process_blocks(blocks)\n    \n    def _process_blocks(self, blocks):\n        result = []\n        for block in blocks:",
+    "metadata": {
+      "source": "https://www.notion.so/ZED-Parser-Test-Page-Complex-Document-Structure-1-26643c686ebf80989932c7384d36d9ac",
+      "title": "ZED Parser Test Page - Complex Document Structure (1)",
+      "type": "page",
+      "id": "26643c686ebf80989932c7384d36d9ac",
+      "created_time": "2025-09-06T16:47:00.000Z",
+      "last_edited_time": "2025-09-06T17:30:00.000Z"
+    }
+  },
+  {
+    "page_content": "blocks = self.client.get_blocks(page_id)\n        return self._process_blocks(blocks)\n    \n    def _process_blocks(self, blocks):\n        result = []\n        for block in blocks:\n            if block.type == 'heading_1':\n                result.append({\n                    'type': 'heading',\n                    'level': 1,\n                    'text': block.heading_[1.rich](http://1.rich/)_text\n                })\n        return result\n```\n### JSON Schema Example\n```json\n{\n  \"document_structure\": {\n    \"title\": \"Parsed Document\",\n    \"blocks\": [\n      {\n        \"type\": \"heading\",\n        \"level\": 1,\n        \"content\": \"Section Title\",\n        \"formatting\": [\"bold\"]\n      },\n      {\n        \"type\": \"paragraph\",\n        \"content\": \"Regular text with formatting\",\n        \"inline_elements\": [\n          {\"type\": \"link\", \"url\": \"[https://example.com](https://example.com/)\", \"text\": \"link text\"}\n        ]\n      }\n    ]\n  }\n}\n```\n---\n## Mathematical Content",
+    "metadata": {
+      "source": "https://www.notion.so/ZED-Parser-Test-Page-Complex-Document-Structure-1-26643c686ebf80989932c7384d36d9ac",
+      "title": "ZED Parser Test Page - Complex Document Structure (1)",
+      "type": "page",
+      "id": "26643c686ebf80989932c7384d36d9ac",
+      "created_time": "2025-09-06T16:47:00.000Z",
+      "last_edited_time": "2025-09-06T17:30:00.000Z"
+    }
+  },
+  {
+    "page_content": "\"inline_elements\": [\n          {\"type\": \"link\", \"url\": \"[https://example.com](https://example.com/)\", \"text\": \"link text\"}\n        ]\n      }\n    ]\n  }\n}\n```\n---\n## Mathematical Content\nInline math: The formula E = mc^2 demonstrates energy-mass equivalence.\nBlock equation:\n$$int_{-infty}^{infty} e^{-x^2} dx = sqrt{pi}$$\n---\n## Callouts and Contextual Information\n---\n## Multi-Column Layout\n    ### Left Column\n    This content appears in the left column. Multi-column layouts present unique challenges for parsers in maintaining reading order and structure.\n    * Left column item 1\n    * Left column item 2\n    * Left column item 3\n    ### Right Column\n    This content appears in the right column. The parser should understand the relationship between columns.\n    1. Right column numbered item\n    1. Another numbered item\n    1. Final item with `code`\n---\n## References and Links\n### External Links\n* [Official Notion API Documentation](https://developers.notion.com/)",
+    "metadata": {
+      "source": "https://www.notion.so/ZED-Parser-Test-Page-Complex-Document-Structure-1-26643c686ebf80989932c7384d36d9ac",
+      "title": "ZED Parser Test Page - Complex Document Structure (1)",
+      "type": "page",
+      "id": "26643c686ebf80989932c7384d36d9ac",
+      "created_time": "2025-09-06T16:47:00.000Z",
+      "last_edited_time": "2025-09-06T17:30:00.000Z"
+    }
+  },
+  {
+    "page_content": "1. Another numbered item\n    1. Final item with `code`\n---\n## References and Links\n### External Links\n* [Official Notion API Documentation](https://developers.notion.com/)\n* [ZED Company Website](https://zed.com/)\n* [LangChain Framework](https://langchain.com/)\n### Internal References\nThis section would typically contain links to other Notion pages, but for testing purposes, imagine these as:\n* Reference to Technical Specification Document\n* Link to Meeting Notes from 2025-09-01\n* Connection to Product Requirements Database\n---\n## Edge Cases and Special Characters\n### Special Characters\nTesting unicode and special chars: ñ, ü, 中文, العربية, 🚀, ∑, ∆, ∞\n### Mixed Content Types\nParagraph with **bold**, *italic*, `code`, [link](https://example.com/), and special chars: @#$%^&*\n### Deeply Nested Structure\n* Level 1\n  * Level 2\n    * Level 3\n      * Level 4\n        * Level 5 (maximum nesting)\n          * This should test parser limits\n---\n## Document Metadata Section",
+    "metadata": {
+      "source": "https://www.notion.so/ZED-Parser-Test-Page-Complex-Document-Structure-1-26643c686ebf80989932c7384d36d9ac",
+      "title": "ZED Parser Test Page - Complex Document Structure (1)",
+      "type": "page",
+      "id": "26643c686ebf80989932c7384d36d9ac",
+      "created_time": "2025-09-06T16:47:00.000Z",
+      "last_edited_time": "2025-09-06T17:30:00.000Z"
+    }
+  },
+  {
+    "page_content": "### Deeply Nested Structure\n* Level 1\n  * Level 2\n    * Level 3\n      * Level 4\n        * Level 5 (maximum nesting)\n          * This should test parser limits\n---\n## Document Metadata Section\n**Document Purpose**: Parser testing and validation",
+    "metadata": {
+      "source": "https://www.notion.so/ZED-Parser-Test-Page-Complex-Document-Structure-1-26643c686ebf80989932c7384d36d9ac",
+      "title": "ZED Parser Test Page - Complex Document Structure (1)",
+      "type": "page",
+      "id": "26643c686ebf80989932c7384d36d9ac",
+      "created_time": "2025-09-06T16:47:00.000Z",
+      "last_edited_time": "2025-09-06T17:30:00.000Z"
+    }
+  },
+  {
+    "page_content": "**Created**: 2025-09-06\n\n**Author**: @Rishikesh Maddheshiya\n\n**Version**: 1.0\n\n**Tags**: #parser-testing #notion-api #zed-project\n---\n## Summary for Parser Validation\nThis document contains:\n* ✅ Multiple heading levels (H1, H2, H3)\n* ✅ Various text formatting (bold, italic, underline, strikethrough)\n* ✅ Different list types (bullet, numbered, to-do)\n* ✅ Nested content structures\n* ✅ Tables with formatting\n* ✅ Code blocks (multiple languages)\n* ✅ Mathematical expressions\n* ✅ Callouts with icons and colors\n* ✅ Multi-column layouts\n* ✅ Links and references\n* ✅ Special characters and unicode\n* ✅ Toggle sections\n* ✅ Quotes and dividers\n**Parser Success Metrics to Track:**\n1. Block type recognition accuracy\n1. Formatting preservation\n1. Hierarchy maintenance\n1. Content completeness\n1. Special character handling\n1. Nested structure integrity",
+    "metadata": {
+      "source": "https://www.notion.so/ZED-Parser-Test-Page-Complex-Document-Structure-1-26643c686ebf80989932c7384d36d9ac",
+      "title": "ZED Parser Test Page - Complex Document Structure (1)",
+      "type": "page",
+      "id": "26643c686ebf80989932c7384d36d9ac",
+      "created_time": "2025-09-06T16:47:00.000Z",
+      "last_edited_time": "2025-09-06T17:30:00.000Z"
+    }
+  }
+]

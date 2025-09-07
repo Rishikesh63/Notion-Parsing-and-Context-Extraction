@@ -1,22 +1,13 @@
-import json
-import re
-import requests
-from typing import Dict, List, Any, Optional, Tuple
+import time
+import logging
+from typing import Dict, List, Any, Optional
 from notion_client import Client
 from notion_client.errors import APIResponseError
 from langchain.schema import Document as LangchainDocument
-from langchain.text_splitter import RecursiveCharacterTextSplitter
-import requests
-import io
-import csv
-import json
-from notion_client import Client
-from notion_client.errors import APIResponseError
-import PyPDF2
-from PIL import Image
-import pytesseract
-import logging
-from typing import Dict, List, Any, Optional
+
+from file_handlers import FileHandler
+
+logger = logging.getLogger(__name__)
 
 class NotionParser:
     """
@@ -57,6 +48,7 @@ class NotionParser:
             "child_page": self._parse_child_page,
             "child_database": self._parse_child_database,
         }
+        self.file_handler = FileHandler()
         self.ocr_enabled = ocr_enabled
         self.max_retries = max_retries
         
@@ -801,76 +793,16 @@ class NotionParser:
         }
     
     def _ocr_image(self, image_url: str) -> Optional[str]:
-        """Perform OCR on an image to extract text"""
-        try:
-            response = requests.get(image_url, timeout=30)
-            response.raise_for_status()
-            
-            image = Image.open(io.BytesIO(response.content))
-            
-            # Preprocess image for better OCR results
-            # Convert to grayscale
-            if image.mode != 'L':
-                image = image.convert('L')
-            
-            text = pytesseract.image_to_string(image)
-            return text.strip() if text else None
-        except Exception as e:
-            logger.error(f"OCR failed for image {image_url}: {e}")
-            return None
+        """Delegate OCR to FileHandler"""
+        return self.file_handler.ocr_image(image_url)
     
     def _extract_file_text(self, file_url: str) -> Optional[str]:
-        """Extract text from various file types"""
-        try:
-            response = requests.get(file_url, timeout=30)
-            response.raise_for_status()
-            
-            content_type = response.headers.get('content-type', '').lower()
-            
-            # Handle different file types
-            if 'text/plain' in content_type:
-                return response.text
-            elif 'csv' in content_type or 'text/csv' in content_type:
-                # Parse CSV
-                csv_text = ""
-                decoded_content = response.content.decode('utf-8')
-                csv_reader = csv.reader(decoded_content.splitlines())
-                for row in csv_reader:
-                    csv_text += ", ".join(row) + "\n"
-                return csv_text
-            elif 'application/json' in content_type:
-                # Parse JSON
-                try:
-                    json_data = response.json()
-                    return json.dumps(json_data, indent=2)
-                except:
-                    return response.text
-            # Add more file type handlers as needed
-            
-            return None
-        except Exception as e:
-            logger.error(f"Failed to extract text from file {file_url}: {e}")
-            return None
+        """Delegate file text extraction to FileHandler"""
+        return self.file_handler.extract_file_text(file_url)
     
     def _extract_pdf_text(self, pdf_url: str) -> Optional[str]:
-        """Extract text from a PDF file"""
-        try:
-            response = requests.get(pdf_url, timeout=30)
-            response.raise_for_status()
-            
-            pdf_file = io.BytesIO(response.content)
-            pdf_reader = PyPDF2.PdfReader(pdf_file)
-            text = ""
-            
-            for page in pdf_reader.pages:
-                page_text = page.extract_text()
-                if page_text:
-                    text += page_text + "\n\n"
-            
-            return text.strip() if text else None
-        except Exception as e:
-            logger.error(f"Failed to extract text from PDF {pdf_url}: {e}")
-            return None
+        """Delegate PDF text extraction to FileHandler"""
+        return self.file_handler.extract_pdf_text(pdf_url)
     
     def to_langchain_documents(self, parsed_data: Dict[str, Any]) -> List[LangchainDocument]:
         """Convert parsed Notion data to LangChain documents for AI workflows"""
