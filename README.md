@@ -1,3 +1,7 @@
+3. (Optional) Activate the Poetry shell for an isolated environment:
+   ```
+   poetry shell
+   ```
 # Notion Parsing and Context Extraction
 
 ## Overview
@@ -19,9 +23,17 @@ This project provides a scalable and extensible parser for Notion documents and 
    git clone https://github.com/Rishikesh63/Notion-Parsing-and-Context-Extraction.git
    cd Notion-Parsing-and-Context-Extraction
    ```
-2. Install dependencies:
+2. Install Poetry (if not already installed):
    ```
-   pip install -r requirements.txt
+   pip install poetry
+   ```
+3. Activate the Poetry shell for an isolated environment:
+   ```
+   poetry shell
+   ```
+4. Install dependencies with Poetry:
+   ```
+   poetry install
    ```
 
 ## Usage
@@ -50,7 +62,7 @@ This project provides a scalable and extensible parser for Notion documents and 
 
 ## Requirements
 
-See `requirements.txt` for all dependencies, including:
+All dependencies are managed via Poetry in `pyproject.toml`. Key dependencies include:
 - notion-client
 - langchain
 - pandas
