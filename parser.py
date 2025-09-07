@@ -48,9 +48,9 @@ class NotionParser:
             "child_page": self._parse_child_page,
             "child_database": self._parse_child_database,
         }
-        self.file_handler = FileHandler()
-        self.ocr_enabled = ocr_enabled
-        self.max_retries = max_retries
+        import os
+        base_url = os.getenv("NOTION_BASE_URL", "https://www.notion.so")
+        self.file_handler = FileHandler(base_url=base_url)
         
     def parse_document(self, page_or_db_id: str) -> Dict[str, Any]:
         """
@@ -658,20 +658,24 @@ class NotionParser:
             }
         }
         
-        # Handle different image types (external vs file)
+        # Handle both external and file images for OCR
+        image_url = None
         if image_type == "external":
-            parsed_block["metadata"]["url"] = image_data["external"]["url"]
+            image_url = image_data["external"]["url"]
+            parsed_block["metadata"]["url"] = image_url
         elif image_type == "file":
-            parsed_block["metadata"]["url"] = image_data["file"]["url"]
-            # Download and OCR image if needed
-            if self.ocr_enabled:
-                try:
-                    image_text = self._ocr_image(image_data["file"]["url"])
-                    if image_text:
-                        parsed_block["content"] = image_text
-                except Exception as e:
-                    logger.error(f"Failed to OCR image: {e}")
-        
+            image_url = image_data["file"]["url"]
+            parsed_block["metadata"]["url"] = image_url
+
+        # Run OCR for any image type if enabled
+        if self.ocr_enabled and image_url:
+            try:
+                image_text = self.file_handler.ocr_image(image_url)
+                if image_text:
+                    parsed_block["content"] = image_text
+            except Exception as e:
+                logger.error(f"Failed to OCR image: {e}")
+
         self.embedded_files_count += 1
         return parsed_block
     
