@@ -1,0 +1,296 @@
+{
+  "id": "26643c686ebf802f9c43eedec800f2cb",
+  "type": "page",
+  "title": "Getting Started",
+  "url": "https://www.notion.so/Getting-Started-26643c686ebf802f9c43eedec800f2cb",
+  "created_time": "2025-09-06T13:25:00.000Z",
+  "last_edited_time": "2025-09-06T13:25:00.000Z",
+  "content": [
+    {
+      "id": "26643c68-6ebf-8080-9cfc-e6dc2ed7774c",
+      "type": "callout",
+      "depth": 0,
+      "content": "Notion Tip: When creating a page, it's important to give it a clear title and provide some content. This could include verifying the information, summarizing the topic, or sharing your thoughts and opinions on something that matters to you.",
+      "metadata": {
+        "icon": {
+          "type": "emoji",
+          "emoji": "💡"
+        }
+      }
+    },
+    {
+      "id": "26643c68-6ebf-80d7-bde2-c82f6d057d6a",
+      "type": "table_of_contents",
+      "depth": 0,
+      "content": "Table of Contents",
+      "metadata": {}
+    },
+    {
+      "id": "26643c68-6ebf-8006-858d-c1c6a0ec5eea",
+      "type": "heading_1",
+      "depth": 0,
+      "content": "The Basics",
+      "metadata": {
+        "level": 1
+      }
+    },
+    {
+      "id": "26643c68-6ebf-80d0-b207-d0e0f60189de",
+      "type": "heading_2",
+      "depth": 0,
+      "content": "Create a Page",
+      "metadata": {
+        "level": 2
+      }
+    },
+    {
+      "id": "26643c68-6ebf-806a-b1d0-d084c6ab204a",
+      "type": "paragraph",
+      "depth": 0,
+      "content": "In your sidebar, click the `+` that appears next to the word **Workspace** on hover. A new page will appear. Give it a title and start typing like you would in any other document.",
+      "metadata": {}
+    },
+    {
+      "id": "26643c68-6ebf-80ae-95c7-f15f6dc881d8",
+      "type": "heading_2",
+      "depth": 0,
+      "content": "Headings",
+      "metadata": {
+        "level": 2
+      }
+    },
+    {
+      "id": "26643c68-6ebf-8024-b87a-db9e34974e83",
+      "type": "paragraph",
+      "depth": 0,
+      "content": "You can add headings and subheadings in one of two ways:",
+      "metadata": {}
+    },
+    {
+      "id": "26643c68-6ebf-8007-bbbd-d3a3ed17d9ee",
+      "type": "bulleted_list_item",
+      "depth": 0,
+      "content": "Type `/heading` or `/h1`, `/h2`, or `/h3` to choose the heading size you want.",
+      "metadata": {}
+    },
+    {
+      "id": "26643c68-6ebf-80aa-8d02-d158d372bfa8",
+      "type": "bulleted_list_item",
+      "depth": 0,
+      "content": "Use Markdown shortcuts, like `#`, `##`, and `###`.  ",
+      "metadata": {},
+      "children": [
+        {
+          "id": "26643c68-6ebf-80ae-b3dc-df3566215e1b",
+          "type": "bulleted_list_item",
+          "depth": 1,
+          "content": "Create inline code by wrapping text with ``` (or with the shortcut `cmd/ctrl + e`).",
+          "metadata": {}
+        }
+      ]
+    },
+    {
+      "id": "26643c68-6ebf-80d3-94c9-c63eabe2c809",
+      "type": "heading_2",
+      "depth": 0,
+      "content": "Toggle Lists",
+      "metadata": {
+        "level": 2
+      }
+    },
+    {
+      "id": "26643c68-6ebf-80f4-b68a-ce7236eb5866",
+      "type": "toggle",
+      "depth": 0,
+      "content": "Toggle lists streamline your content. Click the arrow to open.",
+      "metadata": {},
+      "children": [
+        {
+          "id": "26643c68-6ebf-80f5-a95b-dcd4a0acc8ca",
+          "type": "bulleted_list_item",
+          "depth": 1,
+          "content": "Click the arrow again to hide this content.",
+          "metadata": {}
+        },
+        {
+          "id": "26643c68-6ebf-8025-9e2a-d0e3aa00d328",
+          "type": "bulleted_list_item",
+          "depth": 1,
+          "content": "Create a toggle by typing `/toggle` and pressing `enter`.",
+          "metadata": {}
+        },
+        {
+          "id": "26643c68-6ebf-8013-8460-c905740be8d2",
+          "type": "bulleted_list_item",
+          "depth": 1,
+          "content": "You can add anything to toggles, including images and embeds.",
+          "metadata": {}
+        }
+      ]
+    },
+    {
+      "id": "26643c68-6ebf-80ee-8cbe-e2a5ee7a6e8e",
+      "type": "heading_2",
+      "depth": 0,
+      "content": "Callout Blocks",
+      "metadata": {
+        "level": 2
+      }
+    },
+    {
+      "id": "26643c68-6ebf-80f3-8752-e8b6e5ef7db8",
+      "type": "callout",
+      "depth": 0,
+      "content": "**Notion Tip: **Create a callout block like this by typing `/call` and pressing `enter`. Helpful for adding inline instructions, warnings, disclaimers, and tips. Change the emoji icon by clicking on it.",
+      "metadata": {
+        "icon": {
+          "type": "emoji",
+          "emoji": "💡"
+        }
+      }
+    },
+    {
+      "id": "26643c68-6ebf-8081-8539-e25327a60adc",
+      "type": "heading_2",
+      "depth": 0,
+      "content": "Code Blocks",
+      "metadata": {
+        "level": 2
+      }
+    },
+    {
+      "id": "26643c68-6ebf-8064-b5db-fda1c9074661",
+      "type": "paragraph",
+      "depth": 0,
+      "content": "You can add code notation to any Notion page:",
+      "metadata": {},
+      "children": [
+        {
+          "id": "26643c68-6ebf-80dd-8e96-f1ac03827c7b",
+          "type": "bulleted_list_item",
+          "depth": 1,
+          "content": "Type `/code` and press `enter`.",
+          "metadata": {}
+        },
+        {
+          "id": "26643c68-6ebf-8067-9fbb-c25e75a8388d",
+          "type": "bulleted_list_item",
+          "depth": 1,
+          "content": "Choose the language from the dropdown in the bottom right corner. ",
+          "metadata": {}
+        },
+        {
+          "id": "26643c68-6ebf-807b-8fba-e0a42eeb5aea",
+          "type": "bulleted_list_item",
+          "depth": 1,
+          "content": "Here's an example:",
+          "metadata": {}
+        }
+      ]
+    },
+    {
+      "id": "26643c68-6ebf-8021-99c8-f896bb773d69",
+      "type": "code",
+      "depth": 0,
+      "content": "Hover over this block to see the <b>Copy to Clipboard</b> option!",
+      "metadata": {
+        "language": "html"
+      }
+    },
+    {
+      "id": "26643c68-6ebf-80df-b3a1-f2cdf705b1f6",
+      "type": "bulleted_list_item",
+      "depth": 0,
+      "content": "Your teammates can select any code to comment on it.",
+      "metadata": {}
+    },
+    {
+      "id": "26643c68-6ebf-80eb-a977-cdd587efc9fe",
+      "type": "heading_2",
+      "depth": 0,
+      "content": "Organizing Pages",
+      "metadata": {
+        "level": 2
+      }
+    },
+    {
+      "id": "26643c68-6ebf-8005-82f0-c4318c69926f",
+      "type": "paragraph",
+      "depth": 0,
+      "content": "Instead of using folders, Notion lets you nest pages inside pages. Type `/page` and press `enter` to create a sub-page inside a page. Like this:",
+      "metadata": {}
+    },
+    {
+      "id": "26643c68-6ebf-8025-abb4-d3a4d19d248d",
+      "type": "heading_1",
+      "depth": 0,
+      "content": "Advanced Techniques",
+      "metadata": {
+        "level": 1
+      }
+    },
+    {
+      "id": "26643c68-6ebf-80c3-8f06-c859abf99e80",
+      "type": "child_page",
+      "depth": 0,
+      "content": "How to use verification",
+      "metadata": {},
+      "children": [
+        {
+          "id": "26643c68-6ebf-8071-b0e2-d02d7acfa15b",
+          "type": "callout",
+          "depth": 1,
+          "content": "Notion Tip: An owner of a page can verify it by clicking on the verification button above and choosing to verify the page for either a set amount of time or indefinitely!",
+          "metadata": {
+            "icon": {
+              "type": "emoji",
+              "emoji": "💡"
+            }
+          }
+        }
+      ]
+    },
+    {
+      "id": "26643c68-6ebf-8018-85fd-ffdf287f7ccd",
+      "type": "child_page",
+      "depth": 0,
+      "content": "New Page With Tags",
+      "metadata": {},
+      "children": [
+        {
+          "id": "26643c68-6ebf-80b7-ba4b-ec83b64cfa57",
+          "type": "callout",
+          "depth": 1,
+          "content": "Notion Tip: Tag pages to let collaborators know what they can expect to use the page for. You can add one or many tags to any page in a wiki.",
+          "metadata": {
+            "icon": {
+              "type": "emoji",
+              "emoji": "💡"
+            }
+          }
+        }
+      ]
+    },
+    {
+      "id": "26643c68-6ebf-80c2-8eb4-f1f0b43ec16c",
+      "type": "paragraph",
+      "depth": 0,
+      "content": "Check out this [Notion Editor 101](https://www.notion.so/notion/Notion-editor-101-create-and-edit-68c7c67047494fdb87d50185429df93e) guide for more advanced tips and how-to's.",
+      "metadata": {}
+    },
+    {
+      "id": "26643c68-6ebf-80f4-ac53-ec11ada90bf7",
+      "type": "paragraph",
+      "depth": 0,
+      "content": "",
+      "metadata": {}
+    }
+  ],
+  "metadata": {
+    "parsed_blocks": 35,
+    "failed_blocks": 0,
+    "embedded_files": 0,
+    "parsing_efficacy": "100.00%",
+    "total_blocks": 35
+  }
+}

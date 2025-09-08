@@ -1,0 +1,403 @@
+{
+  "id": "26843c686ebf80638aedea570b7c7ab6",
+  "type": "page",
+  "title": "Social Media Calendar",
+  "url": "https://www.notion.so/Social-Media-Calendar-26843c686ebf80638aedea570b7c7ab6",
+  "created_time": "2025-09-08T14:14:00.000Z",
+  "last_edited_time": "2025-09-08T14:16:00.000Z",
+  "content": [
+    {
+      "id": "26843c68-6ebf-81b4-956c-e0dec4fa81dd",
+      "type": "callout",
+      "depth": 0,
+      "content": "**Notion Tip : **Use this template to plan and stay on top of all your social media posts. ",
+      "metadata": {
+        "icon": {
+          "type": "emoji",
+          "emoji": "💡"
+        }
+      }
+    },
+    {
+      "id": "26843c68-6ebf-81ef-ad4f-d9d7a6fe3b48",
+      "type": "paragraph",
+      "depth": 0,
+      "content": "",
+      "metadata": {}
+    },
+    {
+      "id": "26843c68-6ebf-81f4-8a16-ecaf171e6016",
+      "type": "column_list",
+      "depth": 0,
+      "content": "[Unsupported block type: column_list]",
+      "metadata": {},
+      "children": [
+        {
+          "id": "26843c68-6ebf-81bc-b085-e97d947eebfb",
+          "type": "column",
+          "depth": 1,
+          "content": "[Unsupported block type: column]",
+          "metadata": {},
+          "children": [
+            {
+              "id": "26843c68-6ebf-8170-92cb-cf99cfd574e2",
+              "type": "paragraph",
+              "depth": 2,
+              "content": "Hover over each table row and click `◨ OPEN` to view the contents within that page.",
+              "metadata": {}
+            },
+            {
+              "id": "26843c68-6ebf-8134-89dc-dff50f0faac8",
+              "type": "child_database",
+              "depth": 2,
+              "content": "Posts",
+              "metadata": {},
+              "children": [
+                {
+                  "id": "26843c68-6ebf-81e5-85ed-fddb94837e67",
+                  "type": "database_page",
+                  "depth": 0,
+                  "content": "Blog post #10",
+                  "metadata": {
+                    "created_time": "2025-09-08T14:14:00.000Z",
+                    "last_edited_time": "2025-09-08T14:14:00.000Z"
+                  },
+                  "children": [
+                    {
+                      "id": "26843c68-6ebf-81f3-bf92-c11264746ca1",
+                      "type": "callout",
+                      "depth": 1,
+                      "content": "**Notion Tip:** Use this page to plan out and brainstorm the copy and visuals required for this post. Learn more about different types of content blocks [here](https://www.notion.so/guides/types-of-content-blocks).",
+                      "metadata": {
+                        "icon": {
+                          "type": "emoji",
+                          "emoji": "💡"
+                        }
+                      }
+                    }
+                  ]
+                },
+                {
+                  "id": "26843c68-6ebf-816f-8056-e0e4ed356b5d",
+                  "type": "database_page",
+                  "depth": 0,
+                  "content": "Event in New York",
+                  "metadata": {
+                    "created_time": "2025-09-08T14:14:00.000Z",
+                    "last_edited_time": "2025-09-08T14:14:00.000Z"
+                  },
+                  "children": [
+                    {
+                      "id": "26843c68-6ebf-8178-8da5-fad1985384b8",
+                      "type": "heading_3",
+                      "depth": 1,
+                      "content": "English Copy",
+                      "metadata": {
+                        "level": 3
+                      }
+                    },
+                    {
+                      "id": "26843c68-6ebf-8175-ac9c-fe34757dadb6",
+                      "type": "paragraph",
+                      "depth": 1,
+                      "content": "🚀 AI Hackathon Alert in NYC! 🎉 Get ready to code, innovate, and maybe break things (responsibly). ",
+                      "metadata": {}
+                    },
+                    {
+                      "id": "26843c68-6ebf-811a-943c-dfb22ad4dc69",
+                      "type": "paragraph",
+                      "depth": 1,
+                      "content": "Network, win cool prizes, and show off your genius. ",
+                      "metadata": {}
+                    },
+                    {
+                      "id": "26843c68-6ebf-81c6-8d96-f028dcb5b801",
+                      "type": "paragraph",
+                      "depth": 1,
+                      "content": "Space is limited, so hop on it!\n",
+                      "metadata": {}
+                    },
+                    {
+                      "id": "26843c68-6ebf-8175-b4db-f947db335c3e",
+                      "type": "heading_3",
+                      "depth": 1,
+                      "content": "Spanish Copy",
+                      "metadata": {
+                        "level": 3
+                      }
+                    },
+                    {
+                      "id": "26843c68-6ebf-8116-9e6a-f0d4d699ab38",
+                      "type": "unsupported",
+                      "depth": 1,
+                      "content": "[Unsupported block type: unsupported]",
+                      "metadata": {}
+                    },
+                    {
+                      "id": "26843c68-6ebf-811e-9c44-f9472e350586",
+                      "type": "paragraph",
+                      "depth": 1,
+                      "content": "",
+                      "metadata": {}
+                    }
+                  ]
+                },
+                {
+                  "id": "26843c68-6ebf-81c3-9b4d-e76f3444cb7b",
+                  "type": "database_page",
+                  "depth": 0,
+                  "content": "New feature launch",
+                  "metadata": {
+                    "created_time": "2025-09-08T14:14:00.000Z",
+                    "last_edited_time": "2025-09-08T14:14:00.000Z"
+                  },
+                  "children": [
+                    {
+                      "id": "26843c68-6ebf-81ad-8a6e-eedd0755f1cb",
+                      "type": "callout",
+                      "depth": 1,
+                      "content": "**Notion Tip:** Use this page to plan out and brainstorm the copy and visuals required for this post. Learn more about different types of content blocks [here](https://www.notion.so/guides/types-of-content-blocks).",
+                      "metadata": {
+                        "icon": {
+                          "type": "emoji",
+                          "emoji": "💡"
+                        }
+                      }
+                    },
+                    {
+                      "id": "26843c68-6ebf-81cc-98af-fd2b4d9fef11",
+                      "type": "heading_3",
+                      "depth": 1,
+                      "content": "English Copy",
+                      "metadata": {
+                        "level": 3
+                      }
+                    },
+                    {
+                      "id": "26843c68-6ebf-8107-ae60-c481f6c00a16",
+                      "type": "paragraph",
+                      "depth": 1,
+                      "content": "The Notion API is officially out of beta 🤖",
+                      "metadata": {}
+                    },
+                    {
+                      "id": "26843c68-6ebf-8180-a5b3-de6b50a64e22",
+                      "type": "paragraph",
+                      "depth": 1,
+                      "content": "And it comes with new functionality, more granular controls, and an improved developer experience!",
+                      "metadata": {}
+                    },
+                    {
+                      "id": "26843c68-6ebf-81fe-a841-ce2543305b7e",
+                      "type": "paragraph",
+                      "depth": 1,
+                      "content": "[https://www.notion.so/blog/api-ga](https://www.notion.so/blog/api-ga)",
+                      "metadata": {}
+                    },
+                    {
+                      "id": "26843c68-6ebf-81b4-9b6e-d6a699ba376d",
+                      "type": "heading_3",
+                      "depth": 1,
+                      "content": "Spanish Copy",
+                      "metadata": {
+                        "level": 3
+                      }
+                    },
+                    {
+                      "id": "26843c68-6ebf-81b9-a45e-ec94ba29074f",
+                      "type": "unsupported",
+                      "depth": 1,
+                      "content": "[Unsupported block type: unsupported]",
+                      "metadata": {}
+                    },
+                    {
+                      "id": "26843c68-6ebf-814a-b4be-eaf793b931c2",
+                      "type": "paragraph",
+                      "depth": 1,
+                      "content": "",
+                      "metadata": {}
+                    },
+                    {
+                      "id": "26843c68-6ebf-812d-8e9f-e01c105ebd02",
+                      "type": "heading_3",
+                      "depth": 1,
+                      "content": "Post",
+                      "metadata": {
+                        "level": 3
+                      }
+                    },
+                    {
+                      "id": "26843c68-6ebf-8188-95a2-d1ac50f091d8",
+                      "type": "embed",
+                      "depth": 1,
+                      "content": null,
+                      "metadata": {
+                        "url": "https://twitter.com/NotionHQ/status/1499073654193197056?s=20&t=TLXVV36vLlYb3RQ8vbkY2A"
+                      }
+                    }
+                  ]
+                },
+                {
+                  "id": "26843c68-6ebf-81c4-a4fb-d44d5440d240",
+                  "type": "database_page",
+                  "depth": 0,
+                  "content": "Meet the team",
+                  "metadata": {
+                    "created_time": "2025-09-08T14:14:00.000Z",
+                    "last_edited_time": "2025-09-08T14:14:00.000Z"
+                  },
+                  "children": [
+                    {
+                      "id": "26843c68-6ebf-8132-8884-e1e064fa8cdf",
+                      "type": "callout",
+                      "depth": 1,
+                      "content": "**Notion Tip:** Use this page to plan out and brainstorm the copy and visuals required for this post. Learn more about different types of content blocks [here](https://www.notion.so/guides/types-of-content-blocks).",
+                      "metadata": {
+                        "icon": {
+                          "type": "emoji",
+                          "emoji": "💡"
+                        }
+                      }
+                    }
+                  ]
+                },
+                {
+                  "id": "26843c68-6ebf-8105-9ef9-fa5636937a55",
+                  "type": "database_page",
+                  "depth": 0,
+                  "content": "Podcast Release",
+                  "metadata": {
+                    "created_time": "2025-09-08T14:14:00.000Z",
+                    "last_edited_time": "2025-09-08T14:14:00.000Z"
+                  }
+                },
+                {
+                  "id": "26843c68-6ebf-810a-b5a6-ca6a5ec5797d",
+                  "type": "database_page",
+                  "depth": 0,
+                  "content": "Company Update",
+                  "metadata": {
+                    "created_time": "2025-09-08T14:14:00.000Z",
+                    "last_edited_time": "2025-09-08T14:14:00.000Z"
+                  }
+                },
+                {
+                  "id": "26843c68-6ebf-81fc-b767-e7ea1deedff6",
+                  "type": "database_page",
+                  "depth": 0,
+                  "content": "We’re hiring",
+                  "metadata": {
+                    "created_time": "2025-09-08T14:14:00.000Z",
+                    "last_edited_time": "2025-09-08T14:14:00.000Z"
+                  },
+                  "children": [
+                    {
+                      "id": "26843c68-6ebf-8133-ac0c-f6fc66613d32",
+                      "type": "heading_3",
+                      "depth": 1,
+                      "content": "English Copy",
+                      "metadata": {
+                        "level": 3
+                      }
+                    },
+                    {
+                      "id": "26843c68-6ebf-8101-b4d9-f6c6c3cf03b4",
+                      "type": "paragraph",
+                      "depth": 1,
+                      "content": "We're on the lookout for a Junior Java Developer to join our team!",
+                      "metadata": {}
+                    },
+                    {
+                      "id": "26843c68-6ebf-8165-9060-eb39adea7a61",
+                      "type": "paragraph",
+                      "depth": 1,
+                      "content": "📍 Location: London\n🛠 Skills: Java enthusiasm required, experience a plus!\n📈 Perks: Awesome team, growth opportunities",
+                      "metadata": {}
+                    },
+                    {
+                      "id": "26843c68-6ebf-81e8-b396-ee57226a27cd",
+                      "type": "paragraph",
+                      "depth": 1,
+                      "content": "Think you've got what it takes? Apply now and let's create something amazing together. ",
+                      "metadata": {}
+                    },
+                    {
+                      "id": "26843c68-6ebf-8116-82a7-cf4d33546451",
+                      "type": "paragraph",
+                      "depth": 1,
+                      "content": "🔗 Apply here: [Website Link]",
+                      "metadata": {}
+                    },
+                    {
+                      "id": "26843c68-6ebf-8154-9d55-c33fc3171a66",
+                      "type": "heading_3",
+                      "depth": 1,
+                      "content": "Spanish Copy",
+                      "metadata": {
+                        "level": 3
+                      }
+                    },
+                    {
+                      "id": "26843c68-6ebf-8153-9910-dc8005823d76",
+                      "type": "unsupported",
+                      "depth": 1,
+                      "content": "[Unsupported block type: unsupported]",
+                      "metadata": {}
+                    }
+                  ]
+                },
+                {
+                  "id": "26843c68-6ebf-8182-9b06-f6f302d8fd20",
+                  "type": "database_page",
+                  "depth": 0,
+                  "content": "Office Hours in San Francisco",
+                  "metadata": {
+                    "created_time": "2025-09-08T14:14:00.000Z",
+                    "last_edited_time": "2025-09-08T14:14:00.000Z"
+                  }
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "id": "26843c68-6ebf-8124-be13-f338c5c2fbe4",
+          "type": "column",
+          "depth": 1,
+          "content": "[Unsupported block type: column]",
+          "metadata": {},
+          "children": [
+            {
+              "id": "26843c68-6ebf-81b6-ac0d-d48f87fb6716",
+              "type": "paragraph",
+              "depth": 2,
+              "content": "↓ Click through the different tabs to create and see other views.",
+              "metadata": {}
+            },
+            {
+              "id": "26843c68-6ebf-81b2-9eca-efca448c4887",
+              "type": "child_database",
+              "depth": 2,
+              "content": "",
+              "metadata": {}
+            },
+            {
+              "id": "26843c68-6ebf-81a8-a72a-d607582294b4",
+              "type": "paragraph",
+              "depth": 2,
+              "content": "",
+              "metadata": {}
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "metadata": {
+    "parsed_blocks": 36,
+    "failed_blocks": 0,
+    "embedded_files": 0,
+    "parsing_efficacy": "100.00%",
+    "total_blocks": 36
+  }
+}

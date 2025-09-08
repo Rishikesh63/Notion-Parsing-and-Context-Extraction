@@ -1,0 +1,318 @@
+{
+  "id": "85f440755ccf4ff68872f78e4133f904",
+  "type": "page",
+  "title": "Example PRD",
+  "url": "https://www.notion.so/Example-PRD-85f440755ccf4ff68872f78e4133f904",
+  "created_time": "2023-03-10T15:20:00.000Z",
+  "last_edited_time": "2025-09-08T14:11:00.000Z",
+  "content": [
+    {
+      "id": "52568353-89d2-4526-93e9-57a90f5d775f",
+      "type": "paragraph",
+      "depth": 0,
+      "content": "",
+      "metadata": {}
+    },
+    {
+      "id": "dcbda8d4-376b-4bd1-8f2c-6b07729b6658",
+      "type": "callout",
+      "depth": 0,
+      "content": "**Notion Tip: **Here at Notion we use this template to help teams plan, design and develop products with the greatest chance for success. It helps teams think through their work more deeply, improves asynchronous communication with other teams, and creates space for collaboration.",
+      "metadata": {
+        "icon": {
+          "type": "emoji",
+          "emoji": "💡"
+        }
+      }
+    },
+    {
+      "id": "124b4ac9-745e-4b27-b95d-e3481d637529",
+      "type": "heading_1",
+      "depth": 0,
+      "content": "👀 Problem",
+      "metadata": {
+        "level": 1
+      }
+    },
+    {
+      "id": "a3ab9f29-da39-441f-a30c-c53a22ba649c",
+      "type": "quote",
+      "depth": 0,
+      "content": "**Example questions to answer: **\nWhat problem are we solving? For whom? When do they experience this issue?\nWhat data, research and feedback do we have that explains this problem?\nWhich customers are we working with, or hearing from, to better understand this problem?\nWhy is solving this problem urgent? Why is it important? ",
+      "metadata": {}
+    },
+    {
+      "id": "e75614c2-7d80-4ebd-bbb4-630195ff4d4f",
+      "type": "paragraph",
+      "depth": 0,
+      "content": "",
+      "metadata": {}
+    },
+    {
+      "id": "0fc83527-6c30-4e31-a629-5d4f33bd43af",
+      "type": "divider",
+      "depth": 0,
+      "content": "---",
+      "metadata": {}
+    },
+    {
+      "id": "ff3b1947-16df-4603-85a3-034b4b62a1e7",
+      "type": "heading_1",
+      "depth": 0,
+      "content": "💭 Proposal",
+      "metadata": {
+        "level": 1
+      }
+    },
+    {
+      "id": "19e7f1be-4e0a-4189-80c3-9b8f1bb235e1",
+      "type": "quote",
+      "depth": 0,
+      "content": "**Example questions to answer:**\nHow are we solving this issue? What alternatives did we consider? Why did we land with this?\nWhat is the general shape of this solution? Do you have any mocks, prototypes, relevant comparisons in the market?\nHow will we know that we’ve solved this issue? What will we measure?\nHave we considered how we’re building this to be fast, performant, scalable and/or relatively low-cost on our services? ",
+      "metadata": {}
+    },
+    {
+      "id": "e5f83419-dac5-4f27-9e87-f1df2782386d",
+      "type": "paragraph",
+      "depth": 0,
+      "content": "",
+      "metadata": {}
+    },
+    {
+      "id": "208765c9-4a09-46c3-8256-575119cece71",
+      "type": "divider",
+      "depth": 0,
+      "content": "---",
+      "metadata": {}
+    },
+    {
+      "id": "ad2bdede-e14d-43dc-b4c5-6a84a9d087e2",
+      "type": "heading_1",
+      "depth": 0,
+      "content": "🛫 Plan",
+      "metadata": {
+        "level": 1
+      }
+    },
+    {
+      "id": "f488c834-02e0-48d1-ab01-39bb0182bbd2",
+      "type": "quote",
+      "depth": 0,
+      "content": "**Example questions to answer:**\nWhat are we building? How does it work? How do we know that it works? What are we measuring? When will it be ready? **Then, answer these questions:**",
+      "metadata": {},
+      "children": [
+        {
+          "id": "85b3995d-b1a5-4e8d-bc78-55e48a44a0bf",
+          "type": "toggle",
+          "depth": 1,
+          "content": "Question 1: Does everyone know what are we launching?",
+          "metadata": {},
+          "children": [
+            {
+              "id": "3ee52ffa-4cb9-4e6d-993c-9e105be856fe",
+              "type": "to_do",
+              "depth": 2,
+              "content": "**Internal alignment**",
+              "metadata": {
+                "checked": false
+              },
+              "children": [
+                {
+                  "id": "7cbad90d-cc7e-47b7-8e70-ac0dda9572e0",
+                  "type": "to_do",
+                  "depth": 3,
+                  "content": "Can we explain what this change is?",
+                  "metadata": {
+                    "checked": false
+                  }
+                },
+                {
+                  "id": "e32c92a9-afda-4497-9d7c-4b0d7be4827e",
+                  "type": "to_do",
+                  "depth": 3,
+                  "content": "Have you shared details of this change with other functions?",
+                  "metadata": {
+                    "checked": false
+                  }
+                }
+              ]
+            },
+            {
+              "id": "f4ac25a7-ebef-41d6-8b58-37d81212e0e5",
+              "type": "to_do",
+              "depth": 2,
+              "content": "**External messaging**",
+              "metadata": {
+                "checked": false
+              },
+              "children": [
+                {
+                  "id": "23e0e851-4cd1-4dfb-8350-c8df45f50a11",
+                  "type": "to_do",
+                  "depth": 3,
+                  "content": "How are we going to communicate our launch to customers?",
+                  "metadata": {
+                    "checked": false
+                  }
+                },
+                {
+                  "id": "14f5fa79-3cf8-4130-9b1e-4ff82aa0ba02",
+                  "type": "to_do",
+                  "depth": 3,
+                  "content": "How will customers understand changes due to this launch?",
+                  "metadata": {
+                    "checked": false
+                  }
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "id": "40fa071e-d7ed-49de-8709-5db670018244",
+          "type": "toggle",
+          "depth": 1,
+          "content": "Question 2: Are we sure this is going to work?",
+          "metadata": {},
+          "children": [
+            {
+              "id": "9fae9b33-2157-4ac3-bb52-ee7ff2b64228",
+              "type": "to_do",
+              "depth": 2,
+              "content": "**Quality**",
+              "metadata": {
+                "checked": false
+              },
+              "children": [
+                {
+                  "id": "026fb99a-0f91-40f5-b77c-b1b7b782dce1",
+                  "type": "to_do",
+                  "depth": 3,
+                  "content": "Has this product been tested appropriately?",
+                  "metadata": {
+                    "checked": false
+                  }
+                },
+                {
+                  "id": "73a2cc52-5a8f-49b4-992c-8061278b9968",
+                  "type": "to_do",
+                  "depth": 3,
+                  "content": "Have we checked for effects on other products? ",
+                  "metadata": {
+                    "checked": false
+                  }
+                },
+                {
+                  "id": "c26ce983-c533-4d8d-a2c2-afcec5ce2e5b",
+                  "type": "to_do",
+                  "depth": 3,
+                  "content": "Have we done capacity planning?",
+                  "metadata": {
+                    "checked": false
+                  }
+                },
+                {
+                  "id": "9ed6000c-5f69-4deb-8d97-d26e312afca9",
+                  "type": "to_do",
+                  "depth": 3,
+                  "content": "Do we have a contingency plan if the launch doesn’t go well?",
+                  "metadata": {
+                    "checked": false
+                  }
+                }
+              ]
+            },
+            {
+              "id": "fe70e103-f875-4ffb-bc84-5a37e9c45647",
+              "type": "to_do",
+              "depth": 2,
+              "content": "**Measurement**",
+              "metadata": {
+                "checked": false
+              },
+              "children": [
+                {
+                  "id": "a392b063-57a9-4c84-9166-39008c960488",
+                  "type": "to_do",
+                  "depth": 3,
+                  "content": "Do we know how to tell if this launch is a success or not? ",
+                  "metadata": {
+                    "checked": false
+                  }
+                },
+                {
+                  "id": "96306558-d9f2-42ab-92d6-37dc60e5a5e3",
+                  "type": "to_do",
+                  "depth": 3,
+                  "content": "Can others see how this launch is going?",
+                  "metadata": {
+                    "checked": false
+                  }
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "id": "a7c48be4-a466-4619-a796-adbf8274dede",
+          "type": "toggle",
+          "depth": 1,
+          "content": "Question 3: What are our launch steps?",
+          "metadata": {},
+          "children": [
+            {
+              "id": "6911c2c7-fea0-485a-be71-10fe7745ef0f",
+              "type": "to_do",
+              "depth": 2,
+              "content": "**Plan**",
+              "metadata": {
+                "checked": false
+              },
+              "children": [
+                {
+                  "id": "1200297e-ecb9-48ff-9a9e-14afe7f1e07c",
+                  "type": "to_do",
+                  "depth": 3,
+                  "content": "Have you agreed on launch audiences with PMM?",
+                  "metadata": {
+                    "checked": false
+                  }
+                },
+                {
+                  "id": "49d4c37f-f3ba-4965-91ed-e7ceaa9b0373",
+                  "type": "to_do",
+                  "depth": 3,
+                  "content": "Did we agree on launch steps with PMM?",
+                  "metadata": {
+                    "checked": false
+                  }
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "id": "27a99e9b-37c8-4c4f-bb7e-0bbeaa110dde",
+          "type": "paragraph",
+          "depth": 1,
+          "content": "*🚀 It’s go time!*",
+          "metadata": {}
+        }
+      ]
+    },
+    {
+      "id": "6f449579-078d-4c5a-90b1-253ccc7d1048",
+      "type": "paragraph",
+      "depth": 0,
+      "content": "*\n... and feel free to link to other more detailed documents***\n**",
+      "metadata": {}
+    }
+  ],
+  "metadata": {
+    "parsed_blocks": 34,
+    "failed_blocks": 0,
+    "embedded_files": 0,
+    "parsing_efficacy": "100.00%",
+    "total_blocks": 34
+  }
+}

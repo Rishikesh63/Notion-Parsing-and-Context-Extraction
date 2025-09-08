@@ -1,0 +1,35 @@
+[
+  {
+    "page_content": "# Problem statement\nWhat problem are you trying to solve? If there is a PRD, this can be a sync’ed block from the PRD. Link to any other documents that are relevant for background or context.\n## Goals\nWhat should be true after this project is implemented?\n## Non-goals\nWhat is explicitly not in scope and why?\n# Proposed solution\nWhat changes are required to solve this problem and achieve the project goals?\n**What are the high level architectural changes?**\nDiagrams can be very helpful here.\n**What are the high level data model changes?**\nThese should include any database schema changes, or any changes to structured fields, e.g. an existing JSON column.\n**What are the main changes to the UI?**\n## Risks\nWhat risks might be introduced by this set of changes? Consider running a [pre-mortem](https://www.notion.so/templates/pre-mortem-template) to raise risks. Be sure to capture mitigating these risks in the Implementation and Rollout Plans.\n**Are there any backwards-incompatible changes?**",
+    "metadata": {
+      "source": "https://www.notion.so/Example-Tech-Spec-7625c138da9848839198b42b04793f5d",
+      "title": "Example Tech Spec",
+      "type": "page",
+      "id": "7625c138da9848839198b42b04793f5d",
+      "created_time": "2023-03-10T15:20:00.000Z",
+      "last_edited_time": "2025-09-08T14:05:00.000Z"
+    }
+  },
+  {
+    "page_content": "**Are there any backwards-incompatible changes?**\n**Does this project have special implications for security and data privacy?**\n**Could this change significantly increase load on any of our backend systems?**\n**Does this project have any dependencies?**\n# Alternative solutions\nWhat alternatives did you consider? Describe the evaluation criteria for how you chose the proposed solution. \n# Implementation and rollout plan\nFill this section out based on what is relevant for the size and scope of this project. This section can also be TBD as the project is started, but you should gradually fill this in as the project progresses towards launch. \n**Does this project require a migration?**\nIf an extensive migration is necessary, write a separate tech spec for it, and link it here. Describe how to rollback in the event of an unsuccessful migration.\n**Is this project in an experiment or feature flagged?**\nDescribe how to support an incremental release if needed.\n## Success Criteria",
+    "metadata": {
+      "source": "https://www.notion.so/Example-Tech-Spec-7625c138da9848839198b42b04793f5d",
+      "title": "Example Tech Spec",
+      "type": "page",
+      "id": "7625c138da9848839198b42b04793f5d",
+      "created_time": "2023-03-10T15:20:00.000Z",
+      "last_edited_time": "2025-09-08T14:05:00.000Z"
+    }
+  },
+  {
+    "page_content": "**Is this project in an experiment or feature flagged?**\nDescribe how to support an incremental release if needed.\n## Success Criteria\n**How will you validate the solution is working correctly?**\nDescribe what automated and/or manual testing you will do. Does this project need load or stress testing? This can also be a separate Testing Plan doc that is shared with QA, and linked here.\n**What monitoring and alerting will you do to ensure this project doesn’t decrease performance and reliability?**\nE.g. Increased requests, latency, and error rates.",
+    "metadata": {
+      "source": "https://www.notion.so/Example-Tech-Spec-7625c138da9848839198b42b04793f5d",
+      "title": "Example Tech Spec",
+      "type": "page",
+      "id": "7625c138da9848839198b42b04793f5d",
+      "created_time": "2023-03-10T15:20:00.000Z",
+      "last_edited_time": "2025-09-08T14:05:00.000Z"
+    }
+  }
+]

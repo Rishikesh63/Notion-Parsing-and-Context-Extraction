@@ -1,0 +1,348 @@
+{
+  "id": "7625c138da9848839198b42b04793f5d",
+  "type": "page",
+  "title": "Example Tech Spec",
+  "url": "https://www.notion.so/Example-Tech-Spec-7625c138da9848839198b42b04793f5d",
+  "created_time": "2023-03-10T15:20:00.000Z",
+  "last_edited_time": "2025-09-08T14:05:00.000Z",
+  "content": [
+    {
+      "id": "65cb74e1-c560-4c68-8a98-2cdae920155e",
+      "type": "heading_1",
+      "depth": 0,
+      "content": "Problem statement",
+      "metadata": {
+        "level": 1
+      }
+    },
+    {
+      "id": "2657dadc-3a58-463b-9b94-efd16aba2f88",
+      "type": "paragraph",
+      "depth": 0,
+      "content": "What problem are you trying to solve? If there is a PRD, this can be a sync’ed block from the PRD. Link to any other documents that are relevant for background or context.",
+      "metadata": {}
+    },
+    {
+      "id": "998d04c0-3be9-46ad-8212-8d5516e1bcf6",
+      "type": "heading_2",
+      "depth": 0,
+      "content": "Goals",
+      "metadata": {
+        "level": 2
+      }
+    },
+    {
+      "id": "3471bb1f-dfcf-4967-8749-1dd1c5e4c228",
+      "type": "paragraph",
+      "depth": 0,
+      "content": "What should be true after this project is implemented?",
+      "metadata": {}
+    },
+    {
+      "id": "bd8e4c39-87cc-4557-af18-bde232b394fe",
+      "type": "heading_2",
+      "depth": 0,
+      "content": "Non-goals",
+      "metadata": {
+        "level": 2
+      }
+    },
+    {
+      "id": "08230775-8562-4d67-86a4-95c83ed69ad5",
+      "type": "paragraph",
+      "depth": 0,
+      "content": "What is explicitly not in scope and why?",
+      "metadata": {}
+    },
+    {
+      "id": "d595a601-1f2f-4583-8dae-dd265b4af0cf",
+      "type": "heading_1",
+      "depth": 0,
+      "content": "Proposed solution",
+      "metadata": {
+        "level": 1
+      }
+    },
+    {
+      "id": "59301f7f-bd3f-4c5d-9700-eaa73f5b8134",
+      "type": "paragraph",
+      "depth": 0,
+      "content": "What changes are required to solve this problem and achieve the project goals?",
+      "metadata": {}
+    },
+    {
+      "id": "c7bca68e-f521-49c3-b3fb-50486d946a72",
+      "type": "paragraph",
+      "depth": 0,
+      "content": "",
+      "metadata": {}
+    },
+    {
+      "id": "37e6163d-9e29-40db-9667-310ef8787404",
+      "type": "paragraph",
+      "depth": 0,
+      "content": "**What are the high level architectural changes?**",
+      "metadata": {}
+    },
+    {
+      "id": "3f53d712-c52c-4ba5-9a02-f7655e463742",
+      "type": "paragraph",
+      "depth": 0,
+      "content": "Diagrams can be very helpful here.",
+      "metadata": {}
+    },
+    {
+      "id": "4ce97b8f-0847-4175-9562-ea413a693399",
+      "type": "paragraph",
+      "depth": 0,
+      "content": "",
+      "metadata": {}
+    },
+    {
+      "id": "c2ce4066-0a28-45d5-ad4d-49cb46866c3d",
+      "type": "paragraph",
+      "depth": 0,
+      "content": "**What are the high level data model changes?**",
+      "metadata": {}
+    },
+    {
+      "id": "d7de1759-8e9e-4d2b-bb47-c9f47ba347b9",
+      "type": "paragraph",
+      "depth": 0,
+      "content": "These should include any database schema changes, or any changes to structured fields, e.g. an existing JSON column.",
+      "metadata": {}
+    },
+    {
+      "id": "e841ec7b-fd01-4728-8cd6-780792f9f6c5",
+      "type": "paragraph",
+      "depth": 0,
+      "content": "",
+      "metadata": {}
+    },
+    {
+      "id": "b9057a37-b437-48d2-83df-a4444385e568",
+      "type": "paragraph",
+      "depth": 0,
+      "content": "**What are the main changes to the UI?**",
+      "metadata": {}
+    },
+    {
+      "id": "5ad4b729-4d5f-4efb-87fc-353858739d44",
+      "type": "paragraph",
+      "depth": 0,
+      "content": "",
+      "metadata": {}
+    },
+    {
+      "id": "eb4c520f-2409-4a3f-9966-0320159d1da9",
+      "type": "heading_2",
+      "depth": 0,
+      "content": "Risks",
+      "metadata": {
+        "level": 2
+      }
+    },
+    {
+      "id": "dc9605e5-55a2-4ac3-abed-b96e152f7850",
+      "type": "paragraph",
+      "depth": 0,
+      "content": "What risks might be introduced by this set of changes? Consider running a [pre-mortem](https://www.notion.so/templates/pre-mortem-template) to raise risks. Be sure to capture mitigating these risks in the Implementation and Rollout Plans.",
+      "metadata": {}
+    },
+    {
+      "id": "9c8a3c7b-b700-4945-8261-c4a29c8cd68c",
+      "type": "paragraph",
+      "depth": 0,
+      "content": "",
+      "metadata": {}
+    },
+    {
+      "id": "4105679e-e7d3-46ab-80c3-a1ee314e2571",
+      "type": "paragraph",
+      "depth": 0,
+      "content": "**Are there any backwards-incompatible changes?**",
+      "metadata": {}
+    },
+    {
+      "id": "63c2cc1c-ad9c-45f2-8588-80dd9578b7d5",
+      "type": "paragraph",
+      "depth": 0,
+      "content": "",
+      "metadata": {}
+    },
+    {
+      "id": "64a41ee9-1a1c-40bd-9126-cc545f17bbdd",
+      "type": "paragraph",
+      "depth": 0,
+      "content": "**Does this project have special implications for security and data privacy?**",
+      "metadata": {}
+    },
+    {
+      "id": "64e43ebd-666a-443c-b541-367b4bb93235",
+      "type": "paragraph",
+      "depth": 0,
+      "content": "",
+      "metadata": {}
+    },
+    {
+      "id": "b9fd58e6-a573-4809-bd05-538984553531",
+      "type": "paragraph",
+      "depth": 0,
+      "content": "**Could this change significantly increase load on any of our backend systems?**",
+      "metadata": {}
+    },
+    {
+      "id": "f6fa3099-4630-45e4-bbd7-456f56d977a2",
+      "type": "paragraph",
+      "depth": 0,
+      "content": "",
+      "metadata": {}
+    },
+    {
+      "id": "e99f49ca-1ae7-4892-aaa9-fd057f1cc715",
+      "type": "paragraph",
+      "depth": 0,
+      "content": "**Does this project have any dependencies?**",
+      "metadata": {}
+    },
+    {
+      "id": "b1fb85d3-ac46-4ecc-ae7a-e4d09614f2e2",
+      "type": "paragraph",
+      "depth": 0,
+      "content": "",
+      "metadata": {}
+    },
+    {
+      "id": "b2a7658e-2866-4f0b-bda2-d2f5a4a53431",
+      "type": "heading_1",
+      "depth": 0,
+      "content": "Alternative solutions",
+      "metadata": {
+        "level": 1
+      }
+    },
+    {
+      "id": "fd9a8226-5195-4bff-8056-ab8e2bc751a5",
+      "type": "paragraph",
+      "depth": 0,
+      "content": "What alternatives did you consider? Describe the evaluation criteria for how you chose the proposed solution. ",
+      "metadata": {}
+    },
+    {
+      "id": "e566057d-3a9e-4740-8136-520283d3fedf",
+      "type": "heading_1",
+      "depth": 0,
+      "content": "Implementation and rollout plan",
+      "metadata": {
+        "level": 1
+      }
+    },
+    {
+      "id": "4899d043-a48e-444c-9290-dc3aa686e8d0",
+      "type": "paragraph",
+      "depth": 0,
+      "content": "Fill this section out based on what is relevant for the size and scope of this project. This section can also be TBD as the project is started, but you should gradually fill this in as the project progresses towards launch. ",
+      "metadata": {}
+    },
+    {
+      "id": "da9711ba-59f7-46cd-80b0-f4b8903e0841",
+      "type": "paragraph",
+      "depth": 0,
+      "content": "",
+      "metadata": {}
+    },
+    {
+      "id": "b1ab44e9-49d0-442d-8e3d-2d5b7777fb9b",
+      "type": "paragraph",
+      "depth": 0,
+      "content": "**Does this project require a migration?**",
+      "metadata": {}
+    },
+    {
+      "id": "9ad9b000-5fa6-4868-baa9-16984a140088",
+      "type": "paragraph",
+      "depth": 0,
+      "content": "If an extensive migration is necessary, write a separate tech spec for it, and link it here. Describe how to rollback in the event of an unsuccessful migration.",
+      "metadata": {}
+    },
+    {
+      "id": "6ea5dac4-99c5-4cc4-bf62-eae17b10ea11",
+      "type": "paragraph",
+      "depth": 0,
+      "content": "",
+      "metadata": {}
+    },
+    {
+      "id": "5d1e94a7-919c-4dae-aeb0-a4665106dca3",
+      "type": "paragraph",
+      "depth": 0,
+      "content": "**Is this project in an experiment or feature flagged?**",
+      "metadata": {}
+    },
+    {
+      "id": "bff8f8f9-96b5-4a7a-be05-9f5ddcfb5e19",
+      "type": "paragraph",
+      "depth": 0,
+      "content": "Describe how to support an incremental release if needed.",
+      "metadata": {}
+    },
+    {
+      "id": "13345a65-43fb-4c42-8835-7c1be0243bce",
+      "type": "paragraph",
+      "depth": 0,
+      "content": "",
+      "metadata": {}
+    },
+    {
+      "id": "9a66c349-5258-4598-9510-192aa56f76a8",
+      "type": "heading_2",
+      "depth": 0,
+      "content": "Success Criteria",
+      "metadata": {
+        "level": 2
+      }
+    },
+    {
+      "id": "e2f905c0-8fb2-41c9-bfaa-b06b0b4787a0",
+      "type": "paragraph",
+      "depth": 0,
+      "content": "**How will you validate the solution is working correctly?**",
+      "metadata": {}
+    },
+    {
+      "id": "24f5d3e1-9716-405f-b59d-cfbcbfede78f",
+      "type": "paragraph",
+      "depth": 0,
+      "content": "Describe what automated and/or manual testing you will do. Does this project need load or stress testing? This can also be a separate Testing Plan doc that is shared with QA, and linked here.",
+      "metadata": {}
+    },
+    {
+      "id": "7dcea23f-47b1-4414-b020-a7b54716ff3e",
+      "type": "paragraph",
+      "depth": 0,
+      "content": "",
+      "metadata": {}
+    },
+    {
+      "id": "63d3ffef-cbc2-4b52-a6a0-82c374dff9c9",
+      "type": "paragraph",
+      "depth": 0,
+      "content": "**What monitoring and alerting will you do to ensure this project doesn’t decrease performance and reliability?**",
+      "metadata": {}
+    },
+    {
+      "id": "1cbfceae-6140-4c8d-970a-26d30b8df9f8",
+      "type": "paragraph",
+      "depth": 0,
+      "content": "E.g. Increased requests, latency, and error rates.",
+      "metadata": {}
+    }
+  ],
+  "metadata": {
+    "parsed_blocks": 45,
+    "failed_blocks": 0,
+    "embedded_files": 0,
+    "parsing_efficacy": "100.00%",
+    "total_blocks": 45
+  }
+}

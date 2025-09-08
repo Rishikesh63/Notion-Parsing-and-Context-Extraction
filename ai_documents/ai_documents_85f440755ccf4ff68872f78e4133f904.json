@@ -1,0 +1,35 @@
+[
+  {
+    "page_content": "# 👀 Problem\n**Example questions to answer: **\nWhat problem are we solving? For whom? When do they experience this issue?\nWhat data, research and feedback do we have that explains this problem?\nWhich customers are we working with, or hearing from, to better understand this problem?\nWhy is solving this problem urgent? Why is it important? \n---\n# 💭 Proposal\n**Example questions to answer:**\nHow are we solving this issue? What alternatives did we consider? Why did we land with this?\nWhat is the general shape of this solution? Do you have any mocks, prototypes, relevant comparisons in the market?\nHow will we know that we’ve solved this issue? What will we measure?\nHave we considered how we’re building this to be fast, performant, scalable and/or relatively low-cost on our services? \n---\n# 🛫 Plan\n**Example questions to answer:**\nWhat are we building? How does it work? How do we know that it works? What are we measuring? When will it be ready? **Then, answer these questions:**",
+    "metadata": {
+      "source": "https://www.notion.so/Example-PRD-85f440755ccf4ff68872f78e4133f904",
+      "title": "Example PRD",
+      "type": "page",
+      "id": "85f440755ccf4ff68872f78e4133f904",
+      "created_time": "2023-03-10T15:20:00.000Z",
+      "last_edited_time": "2025-09-08T14:11:00.000Z"
+    }
+  },
+  {
+    "page_content": "---\n# 🛫 Plan\n**Example questions to answer:**\nWhat are we building? How does it work? How do we know that it works? What are we measuring? When will it be ready? **Then, answer these questions:**\n    [ ] **Internal alignment**\n      [ ] Can we explain what this change is?\n      [ ] Have you shared details of this change with other functions?\n    [ ] **External messaging**\n      [ ] How are we going to communicate our launch to customers?\n      [ ] How will customers understand changes due to this launch?\n    [ ] **Quality**\n      [ ] Has this product been tested appropriately?\n      [ ] Have we checked for effects on other products? \n      [ ] Have we done capacity planning?\n      [ ] Do we have a contingency plan if the launch doesn’t go well?\n    [ ] **Measurement**\n      [ ] Do we know how to tell if this launch is a success or not? \n      [ ] Can others see how this launch is going?\n    [ ] **Plan**\n      [ ] Have you agreed on launch audiences with PMM?",
+    "metadata": {
+      "source": "https://www.notion.so/Example-PRD-85f440755ccf4ff68872f78e4133f904",
+      "title": "Example PRD",
+      "type": "page",
+      "id": "85f440755ccf4ff68872f78e4133f904",
+      "created_time": "2023-03-10T15:20:00.000Z",
+      "last_edited_time": "2025-09-08T14:11:00.000Z"
+    }
+  },
+  {
+    "page_content": "[ ] Do we know how to tell if this launch is a success or not? \n      [ ] Can others see how this launch is going?\n    [ ] **Plan**\n      [ ] Have you agreed on launch audiences with PMM?\n      [ ] Did we agree on launch steps with PMM?\n  *🚀 It’s go time!*\n*\n... and feel free to link to other more detailed documents***\n**",
+    "metadata": {
+      "source": "https://www.notion.so/Example-PRD-85f440755ccf4ff68872f78e4133f904",
+      "title": "Example PRD",
+      "type": "page",
+      "id": "85f440755ccf4ff68872f78e4133f904",
+      "created_time": "2023-03-10T15:20:00.000Z",
+      "last_edited_time": "2025-09-08T14:11:00.000Z"
+    }
+  }
+]

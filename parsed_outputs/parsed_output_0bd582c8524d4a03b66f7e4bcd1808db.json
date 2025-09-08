@@ -1,0 +1,129 @@
+{
+  "id": "0bd582c8524d4a03b66f7e4bcd1808db",
+  "type": "page",
+  "title": "Getting Started on Mobile",
+  "url": "https://www.notion.so/Getting-Started-on-Mobile-0bd582c8524d4a03b66f7e4bcd1808db",
+  "created_time": "2023-03-10T15:20:00.000Z",
+  "last_edited_time": "2025-09-08T14:08:00.000Z",
+  "content": [
+    {
+      "id": "ab048294-f4bd-4da7-831e-095c72a88c11",
+      "type": "paragraph",
+      "depth": 0,
+      "content": "👋 Welcome to Notion!",
+      "metadata": {}
+    },
+    {
+      "id": "b9c10cef-1cef-4a6c-a39f-4a7a980585aa",
+      "type": "paragraph",
+      "depth": 0,
+      "content": "",
+      "metadata": {}
+    },
+    {
+      "id": "748b5063-6efe-4776-8e94-5a5f6cee6fb2",
+      "type": "paragraph",
+      "depth": 0,
+      "content": "Here are the basics:",
+      "metadata": {}
+    },
+    {
+      "id": "e825caf2-bb1e-47a2-b2e3-a488f79313be",
+      "type": "to_do",
+      "depth": 0,
+      "content": "Tap anywhere and start typing",
+      "metadata": {
+        "checked": false
+      }
+    },
+    {
+      "id": "16344632-5fa7-4899-a459-1ffc8c30ac51",
+      "type": "to_do",
+      "depth": 0,
+      "content": "Tap the + above your keyboard to add content — headers, sub pages, etc.",
+      "metadata": {
+        "checked": false
+      },
+      "children": [
+        {
+          "id": "d92f546c-06d3-4916-8ee3-8243051dee75",
+          "type": "child_page",
+          "depth": 1,
+          "content": "Example sub page",
+          "metadata": {},
+          "children": [
+            {
+              "id": "898dcaaa-f122-40df-b7be-505f40a3c4ca",
+              "type": "paragraph",
+              "depth": 2,
+              "content": "In Notion, you can nest pages inside pages inside pages... infinitely. No more messy folders!",
+              "metadata": {}
+            },
+            {
+              "id": "4fab0047-53ba-4641-9ec5-7a1a6418ac76",
+              "type": "paragraph",
+              "depth": 2,
+              "content": "",
+              "metadata": {}
+            },
+            {
+              "id": "efdd0c02-41d9-4aef-913a-e9cfdc3f6446",
+              "type": "paragraph",
+              "depth": 2,
+              "content": "👈 To go back, tap the link at the top left, or swipe from left to right across your screen.",
+              "metadata": {}
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "75283d74-62c3-49c5-ae39-cf317589f38c",
+      "type": "to_do",
+      "depth": 0,
+      "content": "Highlight text and use the bar above your keyboard to format",
+      "metadata": {
+        "checked": false
+      }
+    },
+    {
+      "id": "9792b53c-a8e1-4680-b38f-0180ac956364",
+      "type": "to_do",
+      "depth": 0,
+      "content": "Tap and hold this line, then drag",
+      "metadata": {
+        "checked": false
+      }
+    },
+    {
+      "id": "73ca0183-474e-49a5-b6be-43622ff010a3",
+      "type": "to_do",
+      "depth": 0,
+      "content": "Tap the home tab button at the bottom left to see your pages",
+      "metadata": {
+        "checked": false
+      }
+    },
+    {
+      "id": "6726de5b-a62d-4ecc-a247-9be2f7f56722",
+      "type": "paragraph",
+      "depth": 0,
+      "content": "",
+      "metadata": {}
+    },
+    {
+      "id": "7f85d97c-9e94-4389-ab9f-2287262590ab",
+      "type": "paragraph",
+      "depth": 0,
+      "content": "👉 **Have a question? **Tap `Help & feedback` in the sidebar.",
+      "metadata": {}
+    }
+  ],
+  "metadata": {
+    "parsed_blocks": 17,
+    "failed_blocks": 0,
+    "embedded_files": 0,
+    "parsing_efficacy": "100.00%",
+    "total_blocks": 17
+  }
+}

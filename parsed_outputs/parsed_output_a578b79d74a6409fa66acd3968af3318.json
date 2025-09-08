@@ -1,0 +1,135 @@
+{
+  "id": "a578b79d74a6409fa66acd3968af3318",
+  "type": "page",
+  "title": "Example Brainstorm",
+  "url": "https://www.notion.so/Example-Brainstorm-a578b79d74a6409fa66acd3968af3318",
+  "created_time": "2023-03-10T15:20:00.000Z",
+  "last_edited_time": "2025-09-08T14:05:00.000Z",
+  "content": [
+    {
+      "id": "3e97cd5a-532f-42e4-a506-7d65e646393c",
+      "type": "callout",
+      "depth": 0,
+      "content": "**Notion Tip: **Use this template to source ideas from your team even when you're not in the same room. Articulate a question you'd like to have answered. At the same time, people can add their bulleted ideas below that question and tag themselves. Click New topic to generate a new question to answer.",
+      "metadata": {
+        "icon": {
+          "type": "emoji",
+          "emoji": "💡"
+        }
+      }
+    },
+    {
+      "id": "54e84a76-ec63-49ff-94c3-0be8c030d4e1",
+      "type": "paragraph",
+      "depth": 0,
+      "content": "",
+      "metadata": {}
+    },
+    {
+      "id": "7a4eec19-a8fb-453f-bd86-e8854ebffe54",
+      "type": "unsupported",
+      "depth": 0,
+      "content": "[Unsupported block type: unsupported]",
+      "metadata": {}
+    },
+    {
+      "id": "ba3131dd-469f-415f-a9b3-950197ac651c",
+      "type": "heading_1",
+      "depth": 0,
+      "content": "[Question to answer]",
+      "metadata": {
+        "level": 1
+      }
+    },
+    {
+      "id": "a0d8f5fd-1f46-4c44-b0a2-034c2df04994",
+      "type": "bulleted_list_item",
+      "depth": 0,
+      "content": "First idea  ",
+      "metadata": {}
+    },
+    {
+      "id": "b2d7ca27-44e3-4635-903a-c1deb4d0f6c1",
+      "type": "bulleted_list_item",
+      "depth": 0,
+      "content": "Second idea  ",
+      "metadata": {}
+    },
+    {
+      "id": "c4f4e82d-c030-4cb7-8866-33396835936e",
+      "type": "bulleted_list_item",
+      "depth": 0,
+      "content": "Third idea  ",
+      "metadata": {}
+    },
+    {
+      "id": "48b3ad55-c602-4483-8b31-cca2ad746949",
+      "type": "bulleted_list_item",
+      "depth": 0,
+      "content": "Fourth idea  ",
+      "metadata": {}
+    },
+    {
+      "id": "7d18754c-8022-4e3d-8e06-d4c9fe1908a5",
+      "type": "heading_1",
+      "depth": 0,
+      "content": "Whiteboard",
+      "metadata": {
+        "level": 1
+      }
+    },
+    {
+      "id": "e38f7ff8-6ed5-4377-8c4f-5c899f576f68",
+      "type": "callout",
+      "depth": 0,
+      "content": "**Notion Tip: **Notion makes it easy to pull in brainstorming resources from other apps so you all stay focused on the same doc. For instance, you can embed mind-mapping boards from Miro and files from Figma that will update in real time.",
+      "metadata": {
+        "icon": {
+          "type": "emoji",
+          "emoji": "💡"
+        }
+      }
+    },
+    {
+      "id": "fffbfa9a-8fba-49fd-a66c-bc312023f386",
+      "type": "paragraph",
+      "depth": 0,
+      "content": "↓ Embed examples below",
+      "metadata": {}
+    },
+    {
+      "id": "840e6c19-2576-4e9e-b832-a0f22636383f",
+      "type": "embed",
+      "depth": 0,
+      "content": null,
+      "metadata": {
+        "url": ""
+      }
+    },
+    {
+      "id": "bfa81a2e-53ea-4dcf-8480-8907f0cb099b",
+      "type": "embed",
+      "depth": 0,
+      "content": null,
+      "metadata": {
+        "url": ""
+      }
+    },
+    {
+      "id": "8b4c6055-7b25-4804-b456-cfd204cfbc5a",
+      "type": "embed",
+      "depth": 0,
+      "content": null,
+      "metadata": {
+        "url": ""
+      }
+    }
+  ],
+  "metadata": {
+    "parsed_blocks": 14,
+    "failed_blocks": 0,
+    "embedded_files": 0,
+    "parsing_efficacy": "100.00%",
+    "total_blocks": 14
+  }
+}
