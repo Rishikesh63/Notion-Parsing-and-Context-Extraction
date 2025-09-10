@@ -1,9 +1,10 @@
+import os
 import time
 import logging
-from typing import Dict, List, Any, Optional
-from notion_client import Client
-from notion_client.errors import APIResponseError
-from langchain.schema import Document as LangchainDocument
+from typing import Dict, List, Any, Optional, Tuple
+from notion_client import Client  # type: ignore
+from notion_client.errors import APIResponseError  # type: ignore
+from langchain.schema import Document as LangchainDocument # type: ignore
 
 from file_handlers import FileHandler
 
@@ -48,7 +49,7 @@ class NotionParser:
             "child_page": self._parse_child_page,
             "child_database": self._parse_child_database,
         }
-        import os
+       
         base_url = os.getenv("NOTION_BASE_URL", "https://www.notion.so")
         self.file_handler = FileHandler(base_url=base_url)
         
@@ -169,11 +170,11 @@ class NotionParser:
     def _parse_block(self, block: Dict[str, Any], depth: int = 0) -> Optional[Dict[str, Any]]:
         """Parse an individual block using the strategy pattern"""
         block_type = block.get("type")
-        block_id = block.get("id")
         parser_func = self.block_parsers.get(block_type, self._parse_unsupported)
         parsed_block = parser_func(block, depth)
         self.parsed_blocks_count += 1
         return parsed_block
+
     # Strategy implementations for each block type
     def _parse_paragraph(self, block, depth):
         return {
@@ -253,207 +254,184 @@ class NotionParser:
         }
 
     def _parse_table(self, block, depth):
-        return {"id": block.get("id"), "type": "table", "depth": depth, "content": None, "metadata": {}}
-
-    def _parse_table_row(self, block, depth):
-        return {"id": block.get("id"), "type": "table_row", "depth": depth, "content": None, "metadata": {}}
-
-    def _parse_image(self, block, depth):
-        return {"id": block.get("id"), "type": "image", "depth": depth, "content": None, "metadata": {}}
-
-    def _parse_file(self, block, depth):
-        return {"id": block.get("id"), "type": "file", "depth": depth, "content": None, "metadata": {}}
-
-    def _parse_pdf(self, block, depth):
-        return {"id": block.get("id"), "type": "pdf", "depth": depth, "content": None, "metadata": {}}
-
-    def _parse_video(self, block, depth):
-        return {"id": block.get("id"), "type": "video", "depth": depth, "content": None, "metadata": {}}
-
-    def _parse_bookmark(self, block, depth):
-        return {"id": block.get("id"), "type": "bookmark", "depth": depth, "content": None, "metadata": {}}
-
-    def _parse_embed(self, block, depth):
-        return {"id": block.get("id"), "type": "embed", "depth": depth, "content": None, "metadata": {}}
-
-    def _parse_equation(self, block, depth):
-        return {
-            "id": block.get("id"),
-            "type": "equation",
-            "depth": depth,
-            "content": block["equation"].get("expression", ""),
-            "metadata": {}
-        }
-
-    def _parse_divider(self, block, depth):
-        return {
-            "id": block.get("id"),
-            "type": "divider",
-            "depth": depth,
-            "content": "---",
-            "metadata": {}
-        }
-
-    def _parse_table_of_contents(self, block, depth):
-        return {
-            "id": block.get("id"),
-            "type": "table_of_contents",
-            "depth": depth,
-            "content": "Table of Contents",
-            "metadata": {}
-        }
-
-    def _parse_child_page(self, block, depth):
+        """Parse a table block"""
+        table_data = block["table"]
         parsed_block = {
-            "id": block.get("id"),
-            "type": "child_page",
+            "id": block["id"],
+            "type": "table",
             "depth": depth,
-            "content": block["child_page"].get("title", ""),
-            "metadata": {}
+            "content": [],
+            "metadata": {
+                "has_column_header": table_data.get("has_column_header", False),
+                "has_row_header": table_data.get("has_row_header", False),
+                "table_width": table_data.get("table_width", 0)
+            }
         }
-        try:
-            child_blocks = self._parse_blocks_recursively(block.get("id"), depth + 1)
-            if child_blocks:
-                parsed_block["children"] = child_blocks
-        except Exception as e:
-            logger.error(f"Failed to parse child page {block.get('id')}: {e}")
+        
+        # Table content will be populated by table_row blocks
         return parsed_block
 
-    def _parse_child_database(self, block, depth):
-        parsed_block = {
-            "id": block.get("id"),
-            "type": "child_database",
-            "depth": depth,
-            "content": block["child_database"].get("title", ""),
-            "metadata": {}
-        }
-        try:
-            db_content = self._parse_database(block.get("id"))
-            if db_content:
-                parsed_block["children"] = db_content
-        except Exception as e:
-            logger.error(f"Failed to parse database {block.get('id')}: {e}")
-        return parsed_block
-
-    def _parse_unsupported(self, block, depth):
-        block_type = block.get("type")
-        return {
-            "id": block.get("id"),
-            "type": block_type,
-            "depth": depth,
-            "content": f"[Unsupported block type: {block_type}]",
-            "metadata": {}
-        }
-
-        # Strategy implementations for each block type
-    def _parse_paragraph(self, block, depth):
-        return {
-            "id": block.get("id"),
-            "type": "paragraph",
-            "depth": depth,
-            "content": self._extract_rich_text(block["paragraph"].get("rich_text", [])),
-            "metadata": {}
-        }
-
-    def _parse_heading(self, block, depth):
-        block_type = block.get("type")
-        return {
-            "id": block.get("id"),
-            "type": block_type,
-            "depth": depth,
-            "content": self._extract_rich_text(block[block_type].get("rich_text", [])),
-            "metadata": {"level": int(block_type.split("_")[1])}
-        }
-
-    def _parse_list_item(self, block, depth):
-        block_type = block.get("type")
-        return {
-            "id": block.get("id"),
-            "type": block_type,
-            "depth": depth,
-            "content": self._extract_rich_text(block[block_type].get("rich_text", [])),
-            "metadata": {}
-        }
-
-    def _parse_to_do(self, block, depth):
-        return {
-            "id": block.get("id"),
-            "type": "to_do",
-            "depth": depth,
-            "content": self._extract_rich_text(block["to_do"].get("rich_text", [])),
-            "metadata": {"checked": block["to_do"].get("checked", False)}
-        }
-
-    def _parse_toggle(self, block, depth):
-        return {
-            "id": block.get("id"),
-            "type": "toggle",
-            "depth": depth,
-            "content": self._extract_rich_text(block["toggle"].get("rich_text", [])),
-            "metadata": {}
-        }
-
-    def _parse_code(self, block, depth):
-        return {
-            "id": block.get("id"),
-            "type": "code",
-            "depth": depth,
-            "content": self._extract_rich_text(block["code"].get("rich_text", [])),
-            "metadata": {"language": block["code"].get("language", "")}
-        }
-
-    def _parse_quote(self, block, depth):
-        return {
-            "id": block.get("id"),
-            "type": "quote",
-            "depth": depth,
-            "content": self._extract_rich_text(block["quote"].get("rich_text", [])),
-            "metadata": {}
-        }
-
-    def _parse_callout(self, block, depth):
-        meta = {}
-        if "icon" in block["callout"]:
-            meta["icon"] = block["callout"]["icon"]
-        return {
-            "id": block.get("id"),
-            "type": "callout",
-            "depth": depth,
-            "content": self._extract_rich_text(block["callout"].get("rich_text", [])),
-            "metadata": meta
-        }
-
-    def _parse_table(self, block, depth):
-        # TODO: Implement table parsing logic
-        return {"id": block.get("id"), "type": "table", "depth": depth, "content": None, "metadata": {}}
-
     def _parse_table_row(self, block, depth):
-        # TODO: Implement table row parsing logic
-        return {"id": block.get("id"), "type": "table_row", "depth": depth, "content": None, "metadata": {}}
+        """Parse a table row block"""
+        table_row = block["table_row"]
+        cells = table_row.get("cells", [])
+        
+        parsed_cells = []
+        for cell in cells:
+            parsed_cells.append(self._extract_rich_text(cell))
+        
+        return {
+            "id": block["id"],
+            "type": "table_row",
+            "depth": depth,
+            "content": parsed_cells,
+            "metadata": {}
+        }
 
     def _parse_image(self, block, depth):
-        # TODO: Implement image parsing logic
-        return {"id": block.get("id"), "type": "image", "depth": depth, "content": None, "metadata": {}}
+        """Parse an image block"""
+        image_data = block["image"]
+        image_type = image_data.get("type", "")
+        parsed_block = {
+            "id": block["id"],
+            "type": "image",
+            "depth": depth,
+            "content": None,
+            "metadata": {
+                "caption": self._extract_rich_text(image_data.get("caption", [])),
+                "type": image_type
+            }
+        }
+        
+        # Handle both external and file images for OCR
+        image_url = None
+        if image_type == "external":
+            image_url = image_data["external"]["url"]
+            parsed_block["metadata"]["url"] = image_url
+        elif image_type == "file":
+            image_url = image_data["file"]["url"]
+            parsed_block["metadata"]["url"] = image_url
+
+        # Run OCR for any image type if enabled
+        if self.ocr_enabled and image_url:
+            try:
+                image_text = self.file_handler.ocr_image(image_url)
+                if image_text:
+                    parsed_block["content"] = image_text
+            except Exception as e:
+                logger.error(f"Failed to OCR image: {e}")
+
+        self.embedded_files_count += 1
+        return parsed_block
 
     def _parse_file(self, block, depth):
-        # TODO: Implement file parsing logic
-        return {"id": block.get("id"), "type": "file", "depth": depth, "content": None, "metadata": {}}
+        """Parse a file block"""
+        file_data = block["file"]
+        file_type = file_data.get("type", "")
+        parsed_block = {
+            "id": block["id"],
+            "type": "file",
+            "depth": depth,
+            "content": None,
+            "metadata": {
+                "caption": self._extract_rich_text(file_data.get("caption", [])),
+                "type": file_type
+            }
+        }
+        
+        if file_type == "external":
+            parsed_block["metadata"]["url"] = file_data["external"]["url"]
+        elif file_type == "file":
+            parsed_block["metadata"]["url"] = file_data["file"]["url"]
+            # Extract text from file if possible
+            try:
+                file_text = self._extract_file_text(file_data["file"]["url"])
+                if file_text:
+                    parsed_block["content"] = file_text
+            except Exception as e:
+                logger.error(f"Failed to extract text from file: {e}")
+        
+        self.embedded_files_count += 1
+        return parsed_block
 
     def _parse_pdf(self, block, depth):
-        # TODO: Implement PDF parsing logic
-        return {"id": block.get("id"), "type": "pdf", "depth": depth, "content": None, "metadata": {}}
+        """Parse a PDF block"""
+        pdf_data = block["pdf"]
+        pdf_type = pdf_data.get("type", "")
+        parsed_block = {
+            "id": block["id"],
+            "type": "pdf",
+            "depth": depth,
+            "content": None,
+            "metadata": {
+                "caption": self._extract_rich_text(pdf_data.get("caption", [])),
+                "type": pdf_type
+            }
+        }
+        
+        if pdf_type == "external":
+            parsed_block["metadata"]["url"] = pdf_data["external"]["url"]
+        elif pdf_type == "file":
+            parsed_block["metadata"]["url"] = pdf_data["file"]["url"]
+            # Extract text from PDF
+            try:
+                pdf_text = self._extract_pdf_text(pdf_data["file"]["url"])
+                if pdf_text:
+                    parsed_block["content"] = pdf_text
+            except Exception as e:
+                logger.error(f"Failed to extract text from PDF: {e}")
+        
+        self.embedded_files_count += 1
+        return parsed_block
 
     def _parse_video(self, block, depth):
-        # TODO: Implement video parsing logic
-        return {"id": block.get("id"), "type": "video", "depth": depth, "content": None, "metadata": {}}
+        """Parse a video block"""
+        video_data = block["video"]
+        video_type = video_data.get("type", "")
+        parsed_block = {
+            "id": block["id"],
+            "type": "video",
+            "depth": depth,
+            "content": None,
+            "metadata": {
+                "caption": self._extract_rich_text(video_data.get("caption", [])),
+                "type": video_type
+            }
+        }
+        
+        if video_type == "external":
+            parsed_block["metadata"]["url"] = video_data["external"]["url"]
+        elif video_type == "file":
+            parsed_block["metadata"]["url"] = video_data["file"]["url"]
+        
+        self.embedded_files_count += 1
+        return parsed_block
 
     def _parse_bookmark(self, block, depth):
-        # TODO: Implement bookmark parsing logic
-        return {"id": block.get("id"), "type": "bookmark", "depth": depth, "content": None, "metadata": {}}
+        """Parse a bookmark block"""
+        bookmark_data = block["bookmark"]
+        return {
+            "id": block["id"],
+            "type": "bookmark",
+            "depth": depth,
+            "content": self._extract_rich_text(bookmark_data.get("caption", [])),
+            "metadata": {
+                "url": bookmark_data.get("url", "")
+            }
+        }
 
     def _parse_embed(self, block, depth):
-        # TODO: Implement embed parsing logic
-        return {"id": block.get("id"), "type": "embed", "depth": depth, "content": None, "metadata": {}}
+        """Parse an embed block"""
+        embed_data = block["embed"]
+        return {
+            "id": block["id"],
+            "type": "embed",
+            "depth": depth,
+            "content": None,
+            "metadata": {
+                "url": embed_data.get("url", "")
+            }
+        }
 
     def _parse_equation(self, block, depth):
         return {
@@ -608,186 +586,6 @@ class NotionParser:
         
         return "".join(text_parts)
     
-    def _parse_table(self, block: Dict[str, Any], depth: int) -> Dict[str, Any]:
-        """Parse a table block"""
-        table_data = block["table"]
-        parsed_block = {
-            "id": block["id"],
-            "type": "table",
-            "depth": depth,
-            "content": [],
-            "metadata": {
-                "has_column_header": table_data.get("has_column_header", False),
-                "has_row_header": table_data.get("has_row_header", False),
-                "table_width": table_data.get("table_width", 0)
-            }
-        }
-        
-        # Table content will be populated by table_row blocks
-        return parsed_block
-    
-    def _parse_table_row(self, block: Dict[str, Any], depth: int) -> Dict[str, Any]:
-        """Parse a table row block"""
-        table_row = block["table_row"]
-        cells = table_row.get("cells", [])
-        
-        parsed_cells = []
-        for cell in cells:
-            parsed_cells.append(self._extract_rich_text(cell))
-        
-        return {
-            "id": block["id"],
-            "type": "table_row",
-            "depth": depth,
-            "content": parsed_cells,
-            "metadata": {}
-        }
-    
-    def _parse_image(self, block: Dict[str, Any], depth: int) -> Dict[str, Any]:
-        """Parse an image block"""
-        image_data = block["image"]
-        image_type = image_data.get("type", "")
-        parsed_block = {
-            "id": block["id"],
-            "type": "image",
-            "depth": depth,
-            "content": None,
-            "metadata": {
-                "caption": self._extract_rich_text(image_data.get("caption", [])),
-                "type": image_type
-            }
-        }
-        
-        # Handle both external and file images for OCR
-        image_url = None
-        if image_type == "external":
-            image_url = image_data["external"]["url"]
-            parsed_block["metadata"]["url"] = image_url
-        elif image_type == "file":
-            image_url = image_data["file"]["url"]
-            parsed_block["metadata"]["url"] = image_url
-
-        # Run OCR for any image type if enabled
-        if self.ocr_enabled and image_url:
-            try:
-                image_text = self.file_handler.ocr_image(image_url)
-                if image_text:
-                    parsed_block["content"] = image_text
-            except Exception as e:
-                logger.error(f"Failed to OCR image: {e}")
-
-        self.embedded_files_count += 1
-        return parsed_block
-    
-    def _parse_file(self, block: Dict[str, Any], depth: int) -> Dict[str, Any]:
-        """Parse a file block"""
-        file_data = block["file"]
-        file_type = file_data.get("type", "")
-        parsed_block = {
-            "id": block["id"],
-            "type": "file",
-            "depth": depth,
-            "content": None,
-            "metadata": {
-                "caption": self._extract_rich_text(file_data.get("caption", [])),
-                "type": file_type
-            }
-        }
-        
-        if file_type == "external":
-            parsed_block["metadata"]["url"] = file_data["external"]["url"]
-        elif file_type == "file":
-            parsed_block["metadata"]["url"] = file_data["file"]["url"]
-            # Extract text from file if possible
-            try:
-                file_text = self._extract_file_text(file_data["file"]["url"])
-                if file_text:
-                    parsed_block["content"] = file_text
-            except Exception as e:
-                logger.error(f"Failed to extract text from file: {e}")
-        
-        self.embedded_files_count += 1
-        return parsed_block
-    
-    def _parse_pdf(self, block: Dict[str, Any], depth: int) -> Dict[str, Any]:
-        """Parse a PDF block"""
-        pdf_data = block["pdf"]
-        pdf_type = pdf_data.get("type", "")
-        parsed_block = {
-            "id": block["id"],
-            "type": "pdf",
-            "depth": depth,
-            "content": None,
-            "metadata": {
-                "caption": self._extract_rich_text(pdf_data.get("caption", [])),
-                "type": pdf_type
-            }
-        }
-        
-        if pdf_type == "external":
-            parsed_block["metadata"]["url"] = pdf_data["external"]["url"]
-        elif pdf_type == "file":
-            parsed_block["metadata"]["url"] = pdf_data["file"]["url"]
-            # Extract text from PDF
-            try:
-                pdf_text = self._extract_pdf_text(pdf_data["file"]["url"])
-                if pdf_text:
-                    parsed_block["content"] = pdf_text
-            except Exception as e:
-                logger.error(f"Failed to extract text from PDF: {e}")
-        
-        self.embedded_files_count += 1
-        return parsed_block
-    
-    def _parse_video(self, block: Dict[str, Any], depth: int) -> Dict[str, Any]:
-        """Parse a video block"""
-        video_data = block["video"]
-        video_type = video_data.get("type", "")
-        parsed_block = {
-            "id": block["id"],
-            "type": "video",
-            "depth": depth,
-            "content": None,
-            "metadata": {
-                "caption": self._extract_rich_text(video_data.get("caption", [])),
-                "type": video_type
-            }
-        }
-        
-        if video_type == "external":
-            parsed_block["metadata"]["url"] = video_data["external"]["url"]
-        elif video_type == "file":
-            parsed_block["metadata"]["url"] = video_data["file"]["url"]
-        
-        self.embedded_files_count += 1
-        return parsed_block
-    
-    def _parse_bookmark(self, block: Dict[str, Any], depth: int) -> Dict[str, Any]:
-        """Parse a bookmark block"""
-        bookmark_data = block["bookmark"]
-        return {
-            "id": block["id"],
-            "type": "bookmark",
-            "depth": depth,
-            "content": self._extract_rich_text(bookmark_data.get("caption", [])),
-            "metadata": {
-                "url": bookmark_data.get("url", "")
-            }
-        }
-    
-    def _parse_embed(self, block: Dict[str, Any], depth: int) -> Dict[str, Any]:
-        """Parse an embed block"""
-        embed_data = block["embed"]
-        return {
-            "id": block["id"],
-            "type": "embed",
-            "depth": depth,
-            "content": None,
-            "metadata": {
-                "url": embed_data.get("url", "")
-            }
-        }
-    
     def _ocr_image(self, image_url: str) -> Optional[str]:
         """Delegate OCR to FileHandler"""
         return self.file_handler.ocr_image(image_url)
@@ -907,7 +705,7 @@ class NotionParser:
         
         return "".join(text_parts)
     
-    def _extract_embedded_files(self, blocks: List[Dict[str, Any]]) -> List[tuple]:
+    def _extract_embedded_files(self, blocks: List[Dict[str, Any]]) -> List[Tuple[str, Dict[str, Any]]]:
         """Extract embedded files as separate content pieces"""
         embedded_files = []
         
